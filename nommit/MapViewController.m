@@ -99,6 +99,19 @@
     //UIView *v= [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, image.size.width, image.size.height) ];
     //[v addSubview:button];
     
+    NSString *urlAsString = [NSString stringWithFormat:@"http://api.locu.com/v1_0/venue/search/api_key=2fde854b70bc2db996860115e60a89c3d68bd858&country=United+States&region=CA&name=Bollyhood&description=best&location=37.78,122.42"];
+    NSURL *url = [[NSURL alloc] initWithString:urlAsString];
+    NSLog(@"%@", urlAsString);
+    
+    [NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:url] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        
+        if (error) {
+            [self.delegate fetchingGroupsFailedWithError:error];
+        } else {
+            [self.delegate receivedGroupsJSON:data];
+        }
+    }];
+    
     UIBarButtonItem *courierRequestButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(openCourierView)];
     self.navigationItem.leftBarButtonItem = courierRequestButton;
 }
