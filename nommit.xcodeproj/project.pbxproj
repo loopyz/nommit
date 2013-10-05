@@ -9,12 +9,11 @@
 /* Begin PBXBuildFile section */
 		8D1F949718006EA2005A86A5 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8D1F949618006EA2005A86A5 /* GoogleMaps.bundle */; };
 		8D1F949E180074A6005A86A5 /* GlossyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1F949D180074A6005A86A5 /* GlossyButton.m */; };
-		8D1F94B218009C0A005A86A5 /* VenmoAppSwitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D1F94B118009C09005A86A5 /* VenmoAppSwitch.framework */; };
 		8D1F94B418009EAD005A86A5 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D1F94B318009EAD005A86A5 /* GoogleMaps.framework */; };
 		8D1F94B618009EC7005A86A5 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D1F94B518009EC7005A86A5 /* FacebookSDK.framework */; };
 		8D1F94B818009EE4005A86A5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D1F94B718009EE4005A86A5 /* Parse.framework */; };
-		8DB791FC1800C08C001AA248 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DF4A3F17FA07E0000B51E4 /* SenTestingKit.framework */; };
 		8DEF3F791800B0FA005E2BDE /* RequestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF3F781800B0FA005E2BDE /* RequestView.m */; };
+		8DFD66271800D3BF00E7C9ED /* VenmoAppSwitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFD66261800D3BF00E7C9ED /* VenmoAppSwitch.framework */; };
 		F370A44C18004EEC003B7DA8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370A44B18004EEC003B7DA8 /* CoreLocation.framework */; };
 		F370A44E18004F20003B7DA8 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370A44D18004F20003B7DA8 /* CoreImage.framework */; };
 		F370A45018004F72003B7DA8 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370A44F18004F72003B7DA8 /* CoreText.framework */; };
@@ -64,12 +63,12 @@
 		8D1F949618006EA2005A86A5 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleMaps.bundle; sourceTree = "<group>"; };
 		8D1F949C1800742B005A86A5 /* GlossyButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlossyButton.h; sourceTree = "<group>"; };
 		8D1F949D180074A6005A86A5 /* GlossyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlossyButton.m; sourceTree = "<group>"; };
-		8D1F94B118009C09005A86A5 /* VenmoAppSwitch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VenmoAppSwitch.framework; path = ../VenmoAppSwitch.framework; sourceTree = "<group>"; };
 		8D1F94B318009EAD005A86A5 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = ../GoogleMaps.framework; sourceTree = "<group>"; };
 		8D1F94B518009EC7005A86A5 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		8D1F94B718009EE4005A86A5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Parse.framework; sourceTree = "<group>"; };
 		8DEF3F771800B0FA005E2BDE /* RequestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestView.h; sourceTree = "<group>"; };
 		8DEF3F781800B0FA005E2BDE /* RequestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestView.m; sourceTree = "<group>"; };
+		8DFD66261800D3BF00E7C9ED /* VenmoAppSwitch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VenmoAppSwitch.framework; sourceTree = "<group>"; };
 		F370A44B18004EEC003B7DA8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F370A44D18004F20003B7DA8 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		F370A44F18004F72003B7DA8 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -119,11 +118,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DB791FC1800C08C001AA248 /* SenTestingKit.framework in Frameworks */,
 				8D1F94B818009EE4005A86A5 /* Parse.framework in Frameworks */,
 				8D1F94B618009EC7005A86A5 /* FacebookSDK.framework in Frameworks */,
 				8D1F94B418009EAD005A86A5 /* GoogleMaps.framework in Frameworks */,
-				8D1F94B218009C0A005A86A5 /* VenmoAppSwitch.framework in Frameworks */,
 				F370A46A18005766003B7DA8 /* StoreKit.framework in Frameworks */,
 				F370A46618005204003B7DA8 /* MobileCoreServices.framework in Frameworks */,
 				F370A464180051C8003B7DA8 /* SystemConfiguration.framework in Frameworks */,
@@ -135,6 +132,7 @@
 				F370A45818005034003B7DA8 /* CoreData.framework in Frameworks */,
 				F370A45618005005003B7DA8 /* GLKit.framework in Frameworks */,
 				F370A45418004FDE003B7DA8 /* ImageIO.framework in Frameworks */,
+				8DFD66271800D3BF00E7C9ED /* VenmoAppSwitch.framework in Frameworks */,
 				F370A45218004FA5003B7DA8 /* QuartzCore.framework in Frameworks */,
 				F370A45018004F72003B7DA8 /* CoreText.framework in Frameworks */,
 				F370A44E18004F20003B7DA8 /* CoreImage.framework in Frameworks */,
@@ -180,10 +178,10 @@
 		F3DF4A2017FA07DF000B51E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8DFD66261800D3BF00E7C9ED /* VenmoAppSwitch.framework */,
 				8D1F94B718009EE4005A86A5 /* Parse.framework */,
 				8D1F94B518009EC7005A86A5 /* FacebookSDK.framework */,
 				8D1F94B318009EAD005A86A5 /* GoogleMaps.framework */,
-				8D1F94B118009C09005A86A5 /* VenmoAppSwitch.framework */,
 				F370A46918005766003B7DA8 /* StoreKit.framework */,
 				F370A46518005204003B7DA8 /* MobileCoreServices.framework */,
 				F370A463180051C8003B7DA8 /* SystemConfiguration.framework */,
@@ -528,6 +526,7 @@
 					/Users/Lucy/Documents/hackathons,
 					/Users/Lucy/Documents/hackathons/FacebookSDK,
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/Lucy/Documents/hackathons/nommit,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "nommit/nommit-Prefix.pch";
@@ -553,6 +552,7 @@
 					/Users/Lucy/Documents/hackathons,
 					/Users/Lucy/Documents/hackathons/FacebookSDK,
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					/Users/Lucy/Documents/hackathons/nommit,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "nommit/nommit-Prefix.pch";

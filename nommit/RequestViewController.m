@@ -18,6 +18,7 @@
     VenmoClient *_venmoClient;
 }
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -32,6 +33,8 @@
         self.navigationItem.leftBarButtonItem = backButton;
         
         self.view.backgroundColor = [UIColor whiteColor];
+        
+    
         
         /*SBJsonParser *parser = [[SBJsonParser alloc] init];
         //NSDictionary *object = [parser objectWithString:json_string]; //json_string is a NSString of NSData
