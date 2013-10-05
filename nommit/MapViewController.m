@@ -8,6 +8,7 @@
 
 #import "MapViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
+#import "GlossyButton.h"
 
 @interface MapViewController ()
 
@@ -44,6 +45,11 @@
     if (self) {
         self.navigationItem.title = @"nommit";
         [self initNewFoodRequestButton];
+        
+        
+        //UIButton *curAddress = [[UIButton alloc] initWithFrame:CGRectMake(0, screenHeight - 50, screenWidth, 40)];
+        //[curAddress setTitle:@"Request Food" forState:UIControlStateNormal];
+        //[self.view addSubview:curAddress];
     }
     return self;
 }
@@ -62,24 +68,30 @@
 
 - (void)initNewFoodRequestButton
 {
-    //If we want a custom button image
-    //UIImage *image = [UIImage imageNamed:@"IMAGENAME"];
-    //UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    //[button setBackgroundImage: [image stretchableImageWithLeftCapWidth:7.0 topCapHeight:0.0] forState:UIControlStateNormal];
-    //button.frame = CGRectMake(0.0, 0.0, image.size.width, image.size.height);
-    //[button addTarget:self action:@selector(SELECTOR)    forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *driverButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(openCourierRegView)];
+    self.navigationItem.rightBarButtonItem = driverButton;
     
-    //UIView *v= [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, image.size.width, image.size.height) ];
-    //[v addSubview:button];
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height;
     
-    UIBarButtonItem *foodRequestButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(openRequestView)];
-    self.navigationItem.rightBarButtonItem = foodRequestButton;
+    CGRect rect = CGRectMake(10,screenHeight-50,screenWidth-20,44);
+    GlossyButton *glossyBtn = [[GlossyButton alloc] initWithFrame:rect withBackgroundColor:[UIColor redColor]];
+    [glossyBtn setTitle:@"Request Food" forState:UIControlStateNormal];
+    //set selector or callback as openRequestView for UITouchUpInside
+    [self.view addSubview:glossyBtn];
 }
 
 - (void)openRequestView
 {
     RequestViewController *requestView = [[RequestViewController alloc] init];
     [self presentViewController:requestView animated:YES completion:nil];
+}
+
+- (void)openCourierRegView
+{
+    CourierRegistrationViewController *courierView = [[CourierRegistrationViewController alloc] init];
+    [self presentViewController:courierView animated:YES completion:nil];
 }
 
 @end
