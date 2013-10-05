@@ -44,6 +44,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.navigationItem.title = @"nommit";
+        [self initNewCourierButton];
         [self initNewFoodRequestButtonAndAddressLabel];
     }
     return self;
@@ -86,6 +87,22 @@
     [self.view addSubview:label];
 }
 
+- (void)initNewCourierButton
+{
+    //If we want a custom button image
+    //UIImage *image = [UIImage imageNamed:@"IMAGENAME"];
+    //UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    //[button setBackgroundImage: [image stretchableImageWithLeftCapWidth:7.0 topCapHeight:0.0] forState:UIControlStateNormal];
+    //button.frame = CGRectMake(0.0, 0.0, image.size.width, image.size.height);
+    //[button addTarget:self action:@selector(SELECTOR)    forControlEvents:UIControlEventTouchUpInside];
+    
+    //UIView *v= [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, image.size.width, image.size.height) ];
+    //[v addSubview:button];
+    
+    UIBarButtonItem *courierRequestButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(openCourierView)];
+    self.navigationItem.leftBarButtonItem = courierRequestButton;
+}
+
 - (void)openRequestView
 {
     RequestViewController *requestView = [[RequestViewController alloc] init];
@@ -100,5 +117,10 @@
     [self presentViewController:courierView animated:YES completion:nil];
 }
 
+- (void)openCourierView
+{
+    CourierViewController *courierView = [[CourierViewController alloc] init];
+    [self presentViewController:courierView animated:YES completion:nil];
+}
 
 @end
