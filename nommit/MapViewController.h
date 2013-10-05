@@ -10,6 +10,7 @@
 #import "CourierRegistrationViewController.h"
 #import "RatingViewController.h"
 #import "RequestViewController.h"
+#import "CourierViewController.h"
 
 @interface MapViewController : UIViewController
 
