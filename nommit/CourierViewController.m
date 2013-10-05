@@ -17,7 +17,6 @@
 @implementation CourierViewController
 {
     NSMutableArray* orders; // TODO: global variable
-    //UITableView* sampleTableView; // TODO
 }
 
 
@@ -53,13 +52,13 @@
     [ordersRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
         NSLog(@"Order added: %@", snapshot.value);
         [orders addObject:snapshot.value];
-        //[self.sampleTableView reloadData];
+        [self.tableView reloadData];
     }];
     
     [ordersRef observeEventType:FEventTypeChildRemoved withBlock:^(FDataSnapshot *snapshot) {
         NSLog(@"Order deleted: %@", snapshot.value);
         [orders removeObject:snapshot.value];
-        //[self.sampleTableView reloadData];
+        [self.tableView reloadData];
     }];
 }
 
@@ -74,23 +73,31 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [orders count];
+    return [orders count];  // why no self?
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];// forIndexPath:indexPath];
     
     // Configure the cell...
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+    
+    cell.textLabel.text = [orders objectAtIndex:indexPath.row];
+    [[cell textLabel] setLineBreakMode:NSLineBreakByWordWrapping];
+    
+    [[cell detailTextLabel] setText:@"lolwut"];
+    [[cell detailTextLabel] setLineBreakMode:NSLineBreakByWordWrapping];
     
     return cell;
 }
