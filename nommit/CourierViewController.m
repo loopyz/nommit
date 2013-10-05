@@ -16,7 +16,9 @@
 
 @implementation CourierViewController
 {
-    NSMutableArray* orders; // TODO: global variable
+    NSMutableArray* orderKeys; // TODO: global variable
+    NSMutableDictionary* orders;
+    Firebase* firebase;
 }
 
 
@@ -25,7 +27,11 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
-
+        firebase = [[Firebase alloc] initWithUrl:@"https://nommit.firebaseio.com/"];
+        
+        // Initialize orders data
+        orderKeys = [[NSMutableArray alloc] init];
+        orders = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
@@ -33,9 +39,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Initialize orders data
-    orders = [[NSMutableArray alloc] initWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Thai Shrimp Cake", nil];
+    
     [self loadAndUpdateOrders];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -47,17 +51,43 @@
 
 // Loads stored orders from Firebase
 - (void)loadAndUpdateOrders {
-    Firebase* ordersRef = [[Firebase alloc] initWithUrl:@"https://nommit.firebaseio.com/orders"];
+        Firebase* openOrdersRef = [firebase childByAppendingPath:@"orders"];
     
-    [ordersRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+    [openOrdersRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
         NSLog(@"Order added: %@", snapshot.value);
-        [orders addObject:snapshot.value];
+        [orders setObject:snapshot.value forKey:snapshot.name];
+        if ([snapshot.value[@"status"] intValue] == 0)
+        {
+            [orderKeys addObject:snapshot.name];
+        }
+        
         [self.tableView reloadData];
     }];
     
-    [ordersRef observeEventType:FEventTypeChildRemoved withBlock:^(FDataSnapshot *snapshot) {
+    [openOrdersRef observeEventType:FEventTypeChildChanged withBlock:^(FDataSnapshot *snapshot) {
+        NSLog(@"Order changed: %@", snapshot.name);
+        
+        NSInteger newVal = [snapshot.value[@"status"] intValue];
+        if (newVal == 1)
+        {
+            [orderKeys removeObject:snapshot.name];
+        } else if (newVal == 0)
+        {
+            NSInteger oldVal = [orders[snapshot.name][@"status"] intValue];
+            if (oldVal == 1) {
+                [orderKeys addObject:snapshot.name];
+            }
+        }
+        
+        [self.tableView reloadData];
+    }];
+    
+    [openOrdersRef observeEventType:FEventTypeChildRemoved withBlock:^(FDataSnapshot *snapshot) {
         NSLog(@"Order deleted: %@", snapshot.value);
-        [orders removeObject:snapshot.value];
+        
+        [orders removeObjectForKey:snapshot.name];
+        [orderKeys removeObject:snapshot.name];
+        
         [self.tableView reloadData];
     }];
 }
@@ -80,7 +110,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [orders count];  // why no self?
+    return [orderKeys count];  // why no self?
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -93,10 +123,13 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = [orders objectAtIndex:indexPath.row];
+    NSString* orderKey = [orderKeys objectAtIndex:indexPath.row];
+    id order = orders[orderKey];
+    
+    cell.textLabel.text = order[@"restaurant"];
     [[cell textLabel] setLineBreakMode:NSLineBreakByWordWrapping];
     
-    [[cell detailTextLabel] setText:@"lolwut"];
+    [[cell detailTextLabel] setText:order[@"food"]];
     [[cell detailTextLabel] setLineBreakMode:NSLineBreakByWordWrapping];
     
     return cell;
