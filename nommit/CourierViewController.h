@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Gregory Rose. All rights reserved.
 //
 
+#import <Firebase/Firebase.h>
+
 #import <UIKit/UIKit.h>
 
 @interface CourierViewController : UITableViewController

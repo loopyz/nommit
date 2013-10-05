@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Gregory Rose. All rights reserved.
 //
 
+
+
 #import "CourierViewController.h"
 
 @interface CourierViewController ()
@@ -13,6 +15,10 @@
 @end
 
 @implementation CourierViewController
+{
+    NSMutableArray* orders; // TODO: global variable
+    //UITableView* sampleTableView; // TODO
+}
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -20,6 +26,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+
     }
     return self;
 }
@@ -28,6 +35,10 @@
 {
     [super viewDidLoad];
 
+    // Initialize orders data
+    orders = [[NSMutableArray alloc] initWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Thai Shrimp Cake", nil];
+    [self loadAndUpdateOrders];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -35,17 +46,28 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+// Loads stored orders from Firebase
+- (void)loadAndUpdateOrders {
+    Firebase* ordersRef = [[Firebase alloc] initWithUrl:@"https://nommit.firebaseio.com/orders"];
+    
+    [ordersRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+        NSLog(@"Order added: %@", snapshot.value);
+        [orders addObject:snapshot.value];
+        //[self.sampleTableView reloadData];
+    }];
+    
+    [ordersRef observeEventType:FEventTypeChildRemoved withBlock:^(FDataSnapshot *snapshot) {
+        NSLog(@"Order deleted: %@", snapshot.value);
+        [orders removeObject:snapshot.value];
+        //[self.sampleTableView reloadData];
+    }];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (NSArray*)getOrders
-{
-    
-}
-
 
 
 #pragma mark - Table view data source
@@ -59,9 +81,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [orders count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
