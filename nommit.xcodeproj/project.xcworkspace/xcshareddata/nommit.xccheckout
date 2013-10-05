@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4DC7E290-30F6-40C0-9EE7-9B66393418D1</string>
+	<key>IDESourceControlProjectName</key>
+	<string>nommit</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>045B0FD0-B8FC-4794-ADF8-53C09B4E2715</key>
+		<string>https://github.com/loopyz/nommit</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>nommit.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>045B0FD0-B8FC-4794-ADF8-53C09B4E2715</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/loopyz/nommit</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>045B0FD0-B8FC-4794-ADF8-53C09B4E2715</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>045B0FD0-B8FC-4794-ADF8-53C09B4E2715</string>
+			<key>IDESourceControlWCCName</key>
+			<string>nommit</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -20,6 +20,8 @@
     if (self) {
         self.navigationItem.title = @"Request Food";
         self.view.backgroundColor = [UIColor redColor];
+        // ADD: Search bar
+        // TODO: Learn Yelp API
         UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(makeRequest)];
         [[self navigationItem] setRightBarButtonItems:@[doneButton] animated:NO];
     }
