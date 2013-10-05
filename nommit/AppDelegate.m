@@ -7,11 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import "LoginViewController.h"
 #import "MapViewController.h"
-#import <VenmoAppSwitch/Venmo.h>
 
-@implementation AppDelegate
+@implementation AppDelegate 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -26,26 +24,13 @@
     //Google Maps API
     [GMSServices provideAPIKey:@"AIzaSyA8S2dgTX-m-gxcsDyDPBOQkwSvaZ3Puvo"];
     
-    //Venmo
+    //UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:[[MapViewController alloc] init]];
     
-    VenmoClient *venmoClient = [VenmoClient clientWithAppId:@"1422" secret:@"s5z3FenAVb7YYFPNbNKcHfeby6ACZMrV"];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[MapViewController alloc] init]];
     
-    VenmoTransaction *venmoTransaction = [[VenmoTransaction alloc] init];
-    venmoTransaction.type = VenmoTransactionTypePay;
-    venmoTransaction.amount = [NSDecimalNumber decimalNumberWithString:@"0.05"];
-    venmoTransaction.note = @"hello world";
-    venmoTransaction.toUserHandle = @"matthewhamilton";
+    //[self.window.rootViewController presentViewController:navController animated:YES completion:nil];
     
-    //self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[MapViewController alloc] init]];
-    
-    // Override point for customization after application launch.
-    //self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    
-    LoginViewController *loginViewController = [[LoginViewController alloc] init];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
-    [self.window.rootViewController presentViewController:navController animated:YES completion:nil];
-    
     return YES;
 }
 
@@ -75,5 +60,6 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
 
 @end

@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8D1F949518006E90005A86A5 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D1F949418006E90005A86A5 /* GoogleMaps.framework */; };
 		8D1F949718006EA2005A86A5 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8D1F949618006EA2005A86A5 /* GoogleMaps.bundle */; };
-		8D1F949918006ECF005A86A5 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D1F949818006ECF005A86A5 /* FacebookSDK.framework */; };
-		8D1F949B18006F5F005A86A5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D1F949A18006F5F005A86A5 /* Parse.framework */; };
 		8D1F949E180074A6005A86A5 /* GlossyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1F949D180074A6005A86A5 /* GlossyButton.m */; };
-		8D1F94A118008F34005A86A5 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1F94A018008F34005A86A5 /* LoginView.m */; };
-		8D1F94A318009356005A86A5 /* VenmoAppSwitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D1F94A218009356005A86A5 /* VenmoAppSwitch.framework */; };
+		8D1F94B218009C0A005A86A5 /* VenmoAppSwitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D1F94B118009C09005A86A5 /* VenmoAppSwitch.framework */; };
+		8D1F94B418009EAD005A86A5 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D1F94B318009EAD005A86A5 /* GoogleMaps.framework */; };
+		8D1F94B618009EC7005A86A5 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D1F94B518009EC7005A86A5 /* FacebookSDK.framework */; };
+		8D1F94B818009EE4005A86A5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D1F94B718009EE4005A86A5 /* Parse.framework */; };
+		8DB791FC1800C08C001AA248 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DF4A3F17FA07E0000B51E4 /* SenTestingKit.framework */; };
+		8DEF3F791800B0FA005E2BDE /* RequestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF3F781800B0FA005E2BDE /* RequestView.m */; };
 		F370A44C18004EEC003B7DA8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370A44B18004EEC003B7DA8 /* CoreLocation.framework */; };
 		F370A44E18004F20003B7DA8 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370A44D18004F20003B7DA8 /* CoreImage.framework */; };
 		F370A45018004F72003B7DA8 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370A44F18004F72003B7DA8 /* CoreText.framework */; };
@@ -43,7 +44,6 @@
 		F3DF4A4217FA07E0000B51E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DF4A2317FA07DF000B51E4 /* Foundation.framework */; };
 		F3DF4A4A17FA07E0000B51E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F3DF4A4817FA07E0000B51E4 /* InfoPlist.strings */; };
 		F3DF4A4D17FA07E0000B51E4 /* nommitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F3DF4A4C17FA07E0000B51E4 /* nommitTests.m */; };
-		F3DF4A5817FA086D000B51E4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3DF4A5717FA086D000B51E4 /* LoginViewController.m */; };
 		F3DF4A5B17FA093F000B51E4 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3DF4A5A17FA093F000B51E4 /* MapViewController.m */; };
 		F3DF4A5E17FA0A62000B51E4 /* RatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3DF4A5D17FA0A62000B51E4 /* RatingViewController.m */; };
 		F3DF4A6117FA0A82000B51E4 /* RequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3DF4A6017FA0A82000B51E4 /* RequestViewController.m */; };
@@ -61,15 +61,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8D1F949418006E90005A86A5 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		8D1F949618006EA2005A86A5 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleMaps.bundle; sourceTree = "<group>"; };
-		8D1F949818006ECF005A86A5 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
-		8D1F949A18006F5F005A86A5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		8D1F949C1800742B005A86A5 /* GlossyButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlossyButton.h; sourceTree = "<group>"; };
 		8D1F949D180074A6005A86A5 /* GlossyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlossyButton.m; sourceTree = "<group>"; };
-		8D1F949F18008F34005A86A5 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
-		8D1F94A018008F34005A86A5 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
-		8D1F94A218009356005A86A5 /* VenmoAppSwitch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VenmoAppSwitch.framework; sourceTree = "<group>"; };
+		8D1F94B118009C09005A86A5 /* VenmoAppSwitch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VenmoAppSwitch.framework; path = ../VenmoAppSwitch.framework; sourceTree = "<group>"; };
+		8D1F94B318009EAD005A86A5 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = ../GoogleMaps.framework; sourceTree = "<group>"; };
+		8D1F94B518009EC7005A86A5 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		8D1F94B718009EE4005A86A5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Parse.framework; sourceTree = "<group>"; };
+		8DEF3F771800B0FA005E2BDE /* RequestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestView.h; sourceTree = "<group>"; };
+		8DEF3F781800B0FA005E2BDE /* RequestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestView.m; sourceTree = "<group>"; };
 		F370A44B18004EEC003B7DA8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F370A44D18004F20003B7DA8 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		F370A44F18004F72003B7DA8 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -104,8 +104,6 @@
 		F3DF4A4917FA07E0000B51E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F3DF4A4B17FA07E0000B51E4 /* nommitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = nommitTests.h; sourceTree = "<group>"; };
 		F3DF4A4C17FA07E0000B51E4 /* nommitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nommitTests.m; sourceTree = "<group>"; };
-		F3DF4A5617FA086D000B51E4 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		F3DF4A5717FA086D000B51E4 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		F3DF4A5917FA093F000B51E4 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		F3DF4A5A17FA093F000B51E4 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		F3DF4A5C17FA0A62000B51E4 /* RatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingViewController.h; sourceTree = "<group>"; };
@@ -121,13 +119,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DB791FC1800C08C001AA248 /* SenTestingKit.framework in Frameworks */,
+				8D1F94B818009EE4005A86A5 /* Parse.framework in Frameworks */,
+				8D1F94B618009EC7005A86A5 /* FacebookSDK.framework in Frameworks */,
+				8D1F94B418009EAD005A86A5 /* GoogleMaps.framework in Frameworks */,
+				8D1F94B218009C0A005A86A5 /* VenmoAppSwitch.framework in Frameworks */,
 				F370A46A18005766003B7DA8 /* StoreKit.framework in Frameworks */,
 				F370A46618005204003B7DA8 /* MobileCoreServices.framework in Frameworks */,
 				F370A464180051C8003B7DA8 /* SystemConfiguration.framework in Frameworks */,
 				F370A462180051AE003B7DA8 /* CFNetwork.framework in Frameworks */,
 				F370A4601800519B003B7DA8 /* Security.framework in Frameworks */,
 				F370A45E180050C9003B7DA8 /* OpenGLES.framework in Frameworks */,
-				8D1F949B18006F5F005A86A5 /* Parse.framework in Frameworks */,
 				F370A45C18005080003B7DA8 /* AudioToolbox.framework in Frameworks */,
 				F370A45A1800505C003B7DA8 /* libc++.dylib in Frameworks */,
 				F370A45818005034003B7DA8 /* CoreData.framework in Frameworks */,
@@ -135,13 +137,10 @@
 				F370A45418004FDE003B7DA8 /* ImageIO.framework in Frameworks */,
 				F370A45218004FA5003B7DA8 /* QuartzCore.framework in Frameworks */,
 				F370A45018004F72003B7DA8 /* CoreText.framework in Frameworks */,
-				8D1F94A318009356005A86A5 /* VenmoAppSwitch.framework in Frameworks */,
 				F370A44E18004F20003B7DA8 /* CoreImage.framework in Frameworks */,
 				F370A44C18004EEC003B7DA8 /* CoreLocation.framework in Frameworks */,
 				F3DF4A2217FA07DF000B51E4 /* UIKit.framework in Frameworks */,
 				F3DF4A2417FA07DF000B51E4 /* Foundation.framework in Frameworks */,
-				8D1F949518006E90005A86A5 /* GoogleMaps.framework in Frameworks */,
-				8D1F949918006ECF005A86A5 /* FacebookSDK.framework in Frameworks */,
 				F3DF4A2617FA07DF000B51E4 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,7 +180,10 @@
 		F3DF4A2017FA07DF000B51E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8D1F94A218009356005A86A5 /* VenmoAppSwitch.framework */,
+				8D1F94B718009EE4005A86A5 /* Parse.framework */,
+				8D1F94B518009EC7005A86A5 /* FacebookSDK.framework */,
+				8D1F94B318009EAD005A86A5 /* GoogleMaps.framework */,
+				8D1F94B118009C09005A86A5 /* VenmoAppSwitch.framework */,
 				F370A46918005766003B7DA8 /* StoreKit.framework */,
 				F370A46518005204003B7DA8 /* MobileCoreServices.framework */,
 				F370A463180051C8003B7DA8 /* SystemConfiguration.framework */,
@@ -198,9 +200,6 @@
 				F370A44D18004F20003B7DA8 /* CoreImage.framework */,
 				F370A44B18004EEC003B7DA8 /* CoreLocation.framework */,
 				8D1F949618006EA2005A86A5 /* GoogleMaps.bundle */,
-				8D1F949418006E90005A86A5 /* GoogleMaps.framework */,
-				8D1F949A18006F5F005A86A5 /* Parse.framework */,
-				8D1F949818006ECF005A86A5 /* FacebookSDK.framework */,
 				F3DF4A2117FA07DF000B51E4 /* UIKit.framework */,
 				F3DF4A2317FA07DF000B51E4 /* Foundation.framework */,
 				F3DF4A2517FA07DF000B51E4 /* CoreGraphics.framework */,
@@ -216,6 +215,8 @@
 				F3DF4A3117FA07DF000B51E4 /* AppDelegate.m */,
 				8D1F949C1800742B005A86A5 /* GlossyButton.h */,
 				8D1F949D180074A6005A86A5 /* GlossyButton.m */,
+				8DEF3F771800B0FA005E2BDE /* RequestView.h */,
+				8DEF3F781800B0FA005E2BDE /* RequestView.m */,
 				F3DF4A5F17FA0A82000B51E4 /* RequestViewController.h */,
 				F3DF4A6017FA0A82000B51E4 /* RequestViewController.m */,
 				F3DF4A5C17FA0A62000B51E4 /* RatingViewController.h */,
@@ -224,10 +225,6 @@
 				F3DF4A5A17FA093F000B51E4 /* MapViewController.m */,
 				F3DF4A6217FA0AC1000B51E4 /* CourierRegistrationViewController.h */,
 				F3DF4A6317FA0AC1000B51E4 /* CourierRegistrationViewController.m */,
-				F3DF4A5617FA086D000B51E4 /* LoginViewController.h */,
-				F3DF4A5717FA086D000B51E4 /* LoginViewController.m */,
-				8D1F949F18008F34005A86A5 /* LoginView.h */,
-				8D1F94A018008F34005A86A5 /* LoginView.m */,
 				F3DF4A2817FA07DF000B51E4 /* Supporting Files */,
 			);
 			path = nommit;
@@ -416,10 +413,9 @@
 			files = (
 				F3DF4A2E17FA07DF000B51E4 /* main.m in Sources */,
 				F3DF4A3217FA07DF000B51E4 /* AppDelegate.m in Sources */,
-				F3DF4A5817FA086D000B51E4 /* LoginViewController.m in Sources */,
-				8D1F94A118008F34005A86A5 /* LoginView.m in Sources */,
 				F3DF4A5B17FA093F000B51E4 /* MapViewController.m in Sources */,
 				F3DF4A5E17FA0A62000B51E4 /* RatingViewController.m in Sources */,
+				8DEF3F791800B0FA005E2BDE /* RequestView.m in Sources */,
 				F3DF4A6117FA0A82000B51E4 /* RequestViewController.m in Sources */,
 				8D1F949E180074A6005A86A5 /* GlossyButton.m in Sources */,
 				F3DF4A6417FA0AC1000B51E4 /* CourierRegistrationViewController.m in Sources */,
@@ -529,11 +525,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/gregory/dev,
-					"/Users/gregory/dev/GoogleMaps-iOS-1.5.0",
-					"/Users/gregory/dev/GoogleMaps-iOS-1.5.0/GoogleMapsSDKDemos",
-					/Users/gregory/Documents/FacebookSDK,
-					/Users/Lucy/Documents/hackathons/nommit,
+					/Users/Lucy/Documents/hackathons,
+					/Users/Lucy/Documents/hackathons/FacebookSDK,
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "nommit/nommit-Prefix.pch";
@@ -556,11 +550,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/gregory/dev,
-					"/Users/gregory/dev/GoogleMaps-iOS-1.5.0",
-					"/Users/gregory/dev/GoogleMaps-iOS-1.5.0/GoogleMapsSDKDemos",
-					/Users/gregory/Documents/FacebookSDK,
-					/Users/Lucy/Documents/hackathons/nommit,
+					/Users/Lucy/Documents/hackathons,
+					/Users/Lucy/Documents/hackathons/FacebookSDK,
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "nommit/nommit-Prefix.pch";

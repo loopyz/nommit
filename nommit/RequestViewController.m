@@ -7,12 +7,16 @@
 //
 
 #import "RequestViewController.h"
+#import <VenmoAppSwitch/Venmo.h>
+#import "MapViewController.h"
 
 @interface RequestViewController ()
 
 @end
 
-@implementation RequestViewController
+@implementation RequestViewController {
+    VenmoClient *_venmoClient;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -22,9 +26,26 @@
         // ADD: Search bar
         // TODO: Learn Yelp API
         UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(makeRequest)];
-        self.navigationController.navigationItem.rightBarButtonItem = doneButton;
+        self.navigationItem.rightBarButtonItem = doneButton;
+        
+        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissRequest)];
+        self.navigationItem.leftBarButtonItem = backButton;
         
         self.view.backgroundColor = [UIColor whiteColor];
+        
+        /*SBJsonParser *parser = [[SBJsonParser alloc] init];
+        //NSDictionary *object = [parser objectWithString:json_string]; //json_string is a NSString of NSData
+        
+        NSString *requestString = @"http://api.locu.com/v1_0/venue/search/?api_key=2fde854b70bc2db996860115e60a89c3d68bd858&country=United+States&region=CA&name=Bollyhood&description=best&location=37.78%2C+-122.42";
+        
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestString]];
+        NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+        NSString *json_string = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
+        NSArray *statuses = [parser objectWithString:json_string];
+        
+        for (NSDictionary *status in statuses) {
+            NSLog(@"%@", [status objectForKey:@"name"]);
+        }*/
     }
     return self;
 }
@@ -47,9 +68,56 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dismissRequest
+{
+    MapViewController *mvc = [[MapViewController alloc] init];
+    UINavigationController *mvcNavController = [[UINavigationController alloc] initWithRootViewController:mvc];
+    [self.navigationController presentViewController:mvcNavController animated:YES completion:nil];
+}
+
 - (void)makeRequest
 {
     //Make the food request!
+    //Venmo
+    _venmoClient = [VenmoClient clientWithAppId:@"1422" secret:@"s5z3FenAVb7YYFPNbNKcHfeby6ACZMrV"];
+    
+    VenmoTransaction *venmoTransaction = [[VenmoTransaction alloc] init];
+    venmoTransaction.type = VenmoTransactionTypePay;
+    venmoTransaction.amount = [NSDecimalNumber decimalNumberWithString:@"0.05"];
+    venmoTransaction.note = @"hello world";
+    venmoTransaction.toUserHandle = @"matthewhamilton";
+    
+    VenmoViewController *venmoViewController = [_venmoClient viewControllerWithTransaction:
+                                                venmoTransaction];
+    if (venmoViewController) {
+        [self presentModalViewController:venmoViewController animated:YES];
+    }
+}
+
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    NSLog(@"openURL: %@", url);
+    return [_venmoClient openURL:url completionHandler:^(VenmoTransaction *transaction, NSError *error) {
+        if (transaction) {
+            NSString *success = (transaction.success ? @"Success" : @"Failure");
+            NSString *title = [@"Transaction " stringByAppendingString:success];
+            NSString *message = [@"payment_id: " stringByAppendingFormat:@"%@. %@ %@ %@ (%@) $%@ %@",
+                                 transaction.transactionID,
+                                 transaction.fromUserID,
+                                 transaction.typeStringPast,
+                                 transaction.toUserHandle,
+                                 transaction.toUserID,
+                                 transaction.amountString,
+                                 transaction.note];
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message
+                                                               delegate:nil cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+            [alertView show];
+        } else { // error
+            NSLog(@"transaction error code: %i", error.code);
+        }
+    }];
 }
 
 @end
