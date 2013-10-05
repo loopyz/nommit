@@ -12,6 +12,8 @@
 		8D1F949918006ECF005A86A5 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D1F949818006ECF005A86A5 /* FacebookSDK.framework */; };
 		8D1F949B18006F5F005A86A5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D1F949A18006F5F005A86A5 /* Parse.framework */; };
 		8D1F949E180074A6005A86A5 /* GlossyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1F949D180074A6005A86A5 /* GlossyButton.m */; };
+		8D1F94A118008F34005A86A5 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1F94A018008F34005A86A5 /* LoginView.m */; };
+		8D1F94A318009356005A86A5 /* VenmoAppSwitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D1F94A218009356005A86A5 /* VenmoAppSwitch.framework */; };
 		F370A44C18004EEC003B7DA8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370A44B18004EEC003B7DA8 /* CoreLocation.framework */; };
 		F370A44E18004F20003B7DA8 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370A44D18004F20003B7DA8 /* CoreImage.framework */; };
 		F370A45018004F72003B7DA8 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370A44F18004F72003B7DA8 /* CoreText.framework */; };
@@ -65,6 +67,9 @@
 		8D1F949A18006F5F005A86A5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		8D1F949C1800742B005A86A5 /* GlossyButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlossyButton.h; sourceTree = "<group>"; };
 		8D1F949D180074A6005A86A5 /* GlossyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlossyButton.m; sourceTree = "<group>"; };
+		8D1F949F18008F34005A86A5 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		8D1F94A018008F34005A86A5 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		8D1F94A218009356005A86A5 /* VenmoAppSwitch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VenmoAppSwitch.framework; sourceTree = "<group>"; };
 		F370A44B18004EEC003B7DA8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F370A44D18004F20003B7DA8 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		F370A44F18004F72003B7DA8 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -130,6 +135,7 @@
 				F370A45418004FDE003B7DA8 /* ImageIO.framework in Frameworks */,
 				F370A45218004FA5003B7DA8 /* QuartzCore.framework in Frameworks */,
 				F370A45018004F72003B7DA8 /* CoreText.framework in Frameworks */,
+				8D1F94A318009356005A86A5 /* VenmoAppSwitch.framework in Frameworks */,
 				F370A44E18004F20003B7DA8 /* CoreImage.framework in Frameworks */,
 				F370A44C18004EEC003B7DA8 /* CoreLocation.framework in Frameworks */,
 				F3DF4A2217FA07DF000B51E4 /* UIKit.framework in Frameworks */,
@@ -175,6 +181,7 @@
 		F3DF4A2017FA07DF000B51E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8D1F94A218009356005A86A5 /* VenmoAppSwitch.framework */,
 				F370A46918005766003B7DA8 /* StoreKit.framework */,
 				F370A46518005204003B7DA8 /* MobileCoreServices.framework */,
 				F370A463180051C8003B7DA8 /* SystemConfiguration.framework */,
@@ -219,6 +226,8 @@
 				F3DF4A6317FA0AC1000B51E4 /* CourierRegistrationViewController.m */,
 				F3DF4A5617FA086D000B51E4 /* LoginViewController.h */,
 				F3DF4A5717FA086D000B51E4 /* LoginViewController.m */,
+				8D1F949F18008F34005A86A5 /* LoginView.h */,
+				8D1F94A018008F34005A86A5 /* LoginView.m */,
 				F3DF4A2817FA07DF000B51E4 /* Supporting Files */,
 			);
 			path = nommit;
@@ -408,6 +417,7 @@
 				F3DF4A2E17FA07DF000B51E4 /* main.m in Sources */,
 				F3DF4A3217FA07DF000B51E4 /* AppDelegate.m in Sources */,
 				F3DF4A5817FA086D000B51E4 /* LoginViewController.m in Sources */,
+				8D1F94A118008F34005A86A5 /* LoginView.m in Sources */,
 				F3DF4A5B17FA093F000B51E4 /* MapViewController.m in Sources */,
 				F3DF4A5E17FA0A62000B51E4 /* RatingViewController.m in Sources */,
 				F3DF4A6117FA0A82000B51E4 /* RequestViewController.m in Sources */,

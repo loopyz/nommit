@@ -23,7 +23,6 @@
         // TODO: Learn Yelp API
         UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(makeRequest)];
         self.navigationController.navigationItem.rightBarButtonItem = doneButton;
-    
         
         self.view.backgroundColor = [UIColor whiteColor];
     }
