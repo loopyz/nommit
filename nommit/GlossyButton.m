@@ -17,6 +17,7 @@
     if (self) {
         // Initialization code
         [self makeButtonShiny:self withBackgroundColor:backgroundColor];
+        [[self titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:18]];
     }
     return self;
 }
@@ -25,7 +26,7 @@
 {
     // Get the button layer and give it rounded corners with a semi-transparant button
     CALayer *layer = button.layer;
-    layer.cornerRadius = 8.0f;
+    layer.cornerRadius = 4.0f;
     layer.masksToBounds = YES;
     layer.borderWidth = 2.0f;
     layer.borderColor = [UIColor colorWithWhite:0.4f alpha:0.2f].CGColor;
@@ -43,10 +44,10 @@
                          nil];
     // Set the relative positions of the gradien stops
     shineLayer.locations = [NSArray arrayWithObjects:
-                            [NSNumber numberWithFloat:0.0f],
-                            [NSNumber numberWithFloat:0.5f],
-                            [NSNumber numberWithFloat:0.5f],
-                            [NSNumber numberWithFloat:0.8f],
+                            [NSNumber numberWithFloat:0.3f],
+                            [NSNumber numberWithFloat:0.6f],
+                            [NSNumber numberWithFloat:0.7f],
+                            [NSNumber numberWithFloat:0.9f],
                             [NSNumber numberWithFloat:1.0f],
                             nil];
     

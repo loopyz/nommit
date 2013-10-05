@@ -44,12 +44,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.navigationItem.title = @"nommit";
-        [self initNewFoodRequestButton];
-        
-        
-        //UIButton *curAddress = [[UIButton alloc] initWithFrame:CGRectMake(0, screenHeight - 50, screenWidth, 40)];
-        //[curAddress setTitle:@"Request Food" forState:UIControlStateNormal];
-        //[self.view addSubview:curAddress];
+        [self initNewFoodRequestButtonAndAddressLabel];
     }
     return self;
 }
@@ -66,7 +61,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)initNewFoodRequestButton
+- (void)initNewFoodRequestButtonAndAddressLabel
 {
     UIBarButtonItem *driverButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(openCourierRegView)];
     self.navigationItem.rightBarButtonItem = driverButton;
@@ -76,16 +71,25 @@
     CGFloat screenHeight = screenRect.size.height;
     
     CGRect rect = CGRectMake(10,screenHeight-50,screenWidth-20,44);
-    GlossyButton *glossyBtn = [[GlossyButton alloc] initWithFrame:rect withBackgroundColor:[UIColor redColor]];
+    UIColor *buttonColor = [[UIColor alloc] initWithRed:174.0/255 green:134.0/255 blue:191.0/255 alpha:1];
+    GlossyButton *glossyBtn = [[GlossyButton alloc] initWithFrame:rect withBackgroundColor:buttonColor];
     [glossyBtn setTitle:@"Request Food" forState:UIControlStateNormal];
+    [glossyBtn addTarget:self action:@selector(openRequestView) forControlEvents:UIControlEventTouchUpInside];
+
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, screenHeight - 105, screenWidth-20, 44)];
+    [label setText:@"  Address"];
+    [label setBackgroundColor:[UIColor whiteColor]];
+    //[label setShadowColor:[UIColor blackColor]];
+    
     //set selector or callback as openRequestView for UITouchUpInside
     [self.view addSubview:glossyBtn];
+    [self.view addSubview:label];
 }
 
 - (void)openRequestView
 {
     RequestViewController *requestView = [[RequestViewController alloc] init];
-    [self presentViewController:requestView animated:YES completion:nil];
+    [self.navigationController presentViewController:requestView animated:YES completion:nil];
 }
 
 - (void)openCourierRegView
@@ -93,5 +97,6 @@
     CourierRegistrationViewController *courierView = [[CourierRegistrationViewController alloc] init];
     [self presentViewController:courierView animated:YES completion:nil];
 }
+
 
 @end
