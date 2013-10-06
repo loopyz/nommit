@@ -10,6 +10,7 @@
 #import <VenmoAppSwitch/Venmo.h>
 #import "MapViewController.h"
 #import "RequestView.h"
+#import "DisplayRestaurantsViewController.h"
 
 @interface RequestViewController ()
 
@@ -21,6 +22,8 @@
 @implementation RequestViewController {
     VenmoClient *_venmoClient;
     Firebase * _firebase;
+    CLLocationManager *locationManager;
+    bool done;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -43,43 +46,7 @@
         
         _firebase = [[Firebase alloc] initWithUrl:@"https://nommit.firebaseio.com/"];
         
-        /*SBJsonParser *parser = [[SBJsonParser alloc] init];
-        //NSDictionary *object = [parser objectWithString:json_string]; //json_string is a NSString of NSData
-        
-        NSString *requestString = @"http://api.locu.com/v1_0/venue/search/?api_key=2fde854b70bc2db996860115e60a89c3d68bd858&country=United+States&region=CA&name=Bollyhood&description=best&location=37.78%2C+-122.42";
-        
-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestString]];
-        NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-        NSString *json_string = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
-        NSArray *statuses = [parser objectWithString:json_string];
-        
-        for (NSDictionary *status in statuses) {
-            NSLog(@"%@", [status objectForKey:@"name"]);
-        }*/
-        
-        NSString *requestString = @"http://api.locu.com/v1_0/venue/search/?api_key=2fde854b70bc2db996860115e60a89c3d68bd858&country=United+States&region=CA&name=Bollyhood&description=best&location=37.78%2C+-122.42";
-        
-        NSURL *url = [[NSURL alloc] initWithString:requestString];
-        NSLog(@"%@", requestString);
-        
-        [NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:url] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-            
-            if (error) {
-                NSLog(@"Error %@; %@", error, [error localizedDescription]);
-            } else {
-                NSLog(@"success");
-                NSError *localError = nil;
-                NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
-                
-                NSArray *restaurants = parsedObject[@"objects"];
-                NSDictionary *restaurant = restaurants[0]; // TODO: empty?
-                NSString *name = restaurant[@"name"];
-                NSLog(@"%@", name);
-                
-            }
-        }];
-        
-        
+        [locationManager startUpdatingLocation];
     }
     return self;
 }
@@ -94,6 +61,62 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+}
+
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"didFailWithError: %@", error);
+    UIAlertView *errorAlert = [[UIAlertView alloc]
+                               initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [errorAlert show];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    //NSLog(@"didUpdateToLocation: %@", newLocation);
+    CLLocation *currentLocation = newLocation;
+    
+    if (currentLocation != nil && !done) {
+        done = true;
+        //[locationManager stopUpdatingLocation];
+        
+        NSLog(@"%f %f", currentLocation.coordinate.latitude, currentLocation.coordinate.longitude);
+        
+        NSString *requestString = [NSString
+                                   stringWithFormat:@"http://api.locu.com/v1_0/venue/search/?api_key=2fde854b70bc2db996860115e60a89c3d68bd858&category=restaurant&description=best&location=%f%@%f",
+                                   currentLocation.coordinate.latitude, @"%2C+", currentLocation.coordinate.longitude];
+        
+        //@"http://api.locu.com/v1_0/venue/search/?api_key=2fde854b70bc2db996860115e60a89c3d68bd858&description=best&location=%2C+-";
+        
+        /*[NSString
+                                   stringWithFormat:@"http://api.locu.com/v1_0/venue/search/?api_key=2fde854b70bc2db996860115e60a89c3d68bd858&category=restaurant&description=best&location=%f%@%f",
+                                   currentLocation.coordinate.longitude, @"%2C+", currentLocation.coordinate.latitude];*/
+        
+        NSURL *url = [[NSURL alloc] initWithString:requestString];
+        NSLog(@"%@", requestString);
+        
+        [NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:url] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+            
+            if (error) {
+                NSLog(@"Error %@; %@", error, [error localizedDescription]);
+            } else {
+                NSLog(@"success");
+                NSError *localError = nil;
+                NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
+                
+                NSArray *restaurants = parsedObject[@"objects"];
+                // ADD: time estimating function
+                
+                DisplayRestaurantsViewController *restaurantView = [[DisplayRestaurantsViewController alloc] initWithRestaurants:restaurants];
+                [self presentViewController:restaurantView animated:YES completion:nil];
+            }
+        }];
+    }
 }
 
 - (void)didReceiveMemoryWarning
