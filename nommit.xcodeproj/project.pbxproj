@@ -8,10 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		8D1F949E180074A6005A86A5 /* GlossyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1F949D180074A6005A86A5 /* GlossyButton.m */; };
+		8DBAFAA218012ED0004875CC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DBAFAA118012ED0004875CC /* Social.framework */; };
+		8DBAFAA418012ED7004875CC /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DBAFAA318012ED7004875CC /* Accounts.framework */; };
+		8DBAFAA618012F37004875CC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DBAFAA518012F37004875CC /* FacebookSDK.framework */; };
+		8DBAFAA91801319C004875CC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DBAFAA81801319C004875CC /* LoginViewController.m */; };
 		8DEF3F791800B0FA005E2BDE /* RequestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF3F781800B0FA005E2BDE /* RequestView.m */; };
 		8DFD66291800E85D00E7C9ED /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFD66281800E85D00E7C9ED /* libicucore.dylib */; };
 		8DFD66371801011000E7C9ED /* DisplayRestaurantsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFD66361801011000E7C9ED /* DisplayRestaurantsViewController.m */; };
 		8DFD663A1801139100E7C9ED /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFD66391801139100E7C9ED /* MenuViewController.m */; };
+		8DFD663C18012E8C00E7C9ED /* FirebaseSimpleLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFD663B18012E8C00E7C9ED /* FirebaseSimpleLogin.framework */; };
 		F370A44C18004EEC003B7DA8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370A44B18004EEC003B7DA8 /* CoreLocation.framework */; };
 		F370A44E18004F20003B7DA8 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370A44D18004F20003B7DA8 /* CoreImage.framework */; };
 		F370A45018004F72003B7DA8 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370A44F18004F72003B7DA8 /* CoreText.framework */; };
@@ -71,6 +76,11 @@
 /* Begin PBXFileReference section */
 		8D1F949C1800742B005A86A5 /* GlossyButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlossyButton.h; sourceTree = "<group>"; };
 		8D1F949D180074A6005A86A5 /* GlossyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlossyButton.m; sourceTree = "<group>"; };
+		8DBAFAA118012ED0004875CC /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		8DBAFAA318012ED7004875CC /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		8DBAFAA518012F37004875CC /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		8DBAFAA71801319C004875CC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		8DBAFAA81801319C004875CC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		8DEF3F771800B0FA005E2BDE /* RequestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestView.h; sourceTree = "<group>"; };
 		8DEF3F781800B0FA005E2BDE /* RequestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestView.m; sourceTree = "<group>"; };
 		8DFD66281800E85D00E7C9ED /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
@@ -78,6 +88,7 @@
 		8DFD66361801011000E7C9ED /* DisplayRestaurantsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayRestaurantsViewController.m; sourceTree = "<group>"; };
 		8DFD66381801139100E7C9ED /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		8DFD66391801139100E7C9ED /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		8DFD663B18012E8C00E7C9ED /* FirebaseSimpleLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseSimpleLogin.framework; path = ../FirebaseSimpleLogin.framework; sourceTree = "<group>"; };
 		F370A44B18004EEC003B7DA8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F370A44D18004F20003B7DA8 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		F370A44F18004F72003B7DA8 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -143,6 +154,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DBAFAA418012ED7004875CC /* Accounts.framework in Frameworks */,
+				8DBAFAA218012ED0004875CC /* Social.framework in Frameworks */,
 				F3CA32B21800FCD500914EA1 /* GoogleMaps.framework in Frameworks */,
 				F3CA32B01800FCB700914EA1 /* VenmoAppSwitch.framework in Frameworks */,
 				F370A462180051AE003B7DA8 /* CFNetwork.framework in Frameworks */,
@@ -154,6 +167,7 @@
 				F370A464180051C8003B7DA8 /* SystemConfiguration.framework in Frameworks */,
 				F370A4601800519B003B7DA8 /* Security.framework in Frameworks */,
 				F370A45E180050C9003B7DA8 /* OpenGLES.framework in Frameworks */,
+				8DBAFAA618012F37004875CC /* FacebookSDK.framework in Frameworks */,
 				F370A45C18005080003B7DA8 /* AudioToolbox.framework in Frameworks */,
 				F370A45A1800505C003B7DA8 /* libc++.dylib in Frameworks */,
 				F370A45818005034003B7DA8 /* CoreData.framework in Frameworks */,
@@ -162,6 +176,7 @@
 				F370A45418004FDE003B7DA8 /* ImageIO.framework in Frameworks */,
 				F370A45218004FA5003B7DA8 /* QuartzCore.framework in Frameworks */,
 				F370A45018004F72003B7DA8 /* CoreText.framework in Frameworks */,
+				8DFD663C18012E8C00E7C9ED /* FirebaseSimpleLogin.framework in Frameworks */,
 				F370A44E18004F20003B7DA8 /* CoreImage.framework in Frameworks */,
 				F370A44C18004EEC003B7DA8 /* CoreLocation.framework in Frameworks */,
 				F3DF4A2217FA07DF000B51E4 /* UIKit.framework in Frameworks */,
@@ -205,6 +220,10 @@
 		F3DF4A2017FA07DF000B51E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8DBAFAA518012F37004875CC /* FacebookSDK.framework */,
+				8DBAFAA318012ED7004875CC /* Accounts.framework */,
+				8DBAFAA118012ED0004875CC /* Social.framework */,
+				8DFD663B18012E8C00E7C9ED /* FirebaseSimpleLogin.framework */,
 				F3CA32B11800FCD500914EA1 /* GoogleMaps.framework */,
 				F3CA32AF1800FCB600914EA1 /* VenmoAppSwitch.framework */,
 				8DFD66281800E85D00E7C9ED /* libicucore.dylib */,
@@ -265,6 +284,8 @@
 				8DFD66381801139100E7C9ED /* MenuViewController.h */,
 				8DFD66391801139100E7C9ED /* MenuViewController.m */,
 				F3DF4A2817FA07DF000B51E4 /* Supporting Files */,
+				8DBAFAA71801319C004875CC /* LoginViewController.h */,
+				8DBAFAA81801319C004875CC /* LoginViewController.m */,
 			);
 			path = nommit;
 			sourceTree = "<group>";
@@ -457,6 +478,7 @@
 			files = (
 				F3DF4A2E17FA07DF000B51E4 /* main.m in Sources */,
 				F3DF4A3217FA07DF000B51E4 /* AppDelegate.m in Sources */,
+				8DBAFAA91801319C004875CC /* LoginViewController.m in Sources */,
 				F3DF4A5B17FA093F000B51E4 /* MapViewController.m in Sources */,
 				F3DF4A5E17FA0A62000B51E4 /* RatingViewController.m in Sources */,
 				F3CA32B71801358700914EA1 /* OrderConfirmViewController.m in Sources */,

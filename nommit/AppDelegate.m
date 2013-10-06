@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "LoginViewController.h"
 #import "MapViewController.h"
 
 @implementation AppDelegate 
@@ -20,7 +21,7 @@
     
     //UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:[[MapViewController alloc] init]];
     
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[MapViewController alloc] init]];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[LoginViewController alloc] init]];
     
     //[self.window.rootViewController presentViewController:navController animated:YES completion:nil];
     
