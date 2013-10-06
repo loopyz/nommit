@@ -16,6 +16,7 @@
 
 @implementation RequestViewController {
     VenmoClient *_venmoClient;
+    Firebase * _firebase;
 }
 
 
@@ -34,7 +35,7 @@
         
         self.view.backgroundColor = [UIColor whiteColor];
         
-    
+        _firebase = [[Firebase alloc] initWithUrl:@"https://nommit.firebaseio.com/"];
         
         /*SBJsonParser *parser = [[SBJsonParser alloc] init];
         //NSDictionary *object = [parser objectWithString:json_string]; //json_string is a NSString of NSData
@@ -95,6 +96,11 @@
     if (venmoViewController) {
         [self presentModalViewController:venmoViewController animated:YES];
     }
+    
+    Firebase* newOrderRef = [_firebase childByAutoId];
+    [newOrderRef setValue:@{
+                            //@"customer" : @{@"name" : .text} // TODO!
+                            }];
 }
 
 

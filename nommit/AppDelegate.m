@@ -15,12 +15,6 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    //Parse Authentication
-    [Parse setApplicationId:@"dVsvZKvNezm6oWEGL8kSILAXrABkQXYZEuMyt5SZ"
-                  clientKey:@"yKsBX1LAPLgYlVvLfWfkYux4DDrAOQDFJ3R9iUKa"];
-    
-    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    
     //Google Maps API
     [GMSServices provideAPIKey:@"AIzaSyA8S2dgTX-m-gxcsDyDPBOQkwSvaZ3Puvo"];
     
