@@ -140,7 +140,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"We selected something!");
     NSMutableDictionary *order = orders[[orderKeys objectAtIndex:indexPath.row]];
     CourierConfirmViewController *ccvc = [[CourierConfirmViewController alloc] initWithOrder:order];
     UINavigationController *ccvcNavController = [[UINavigationController alloc] initWithRootViewController:ccvc];

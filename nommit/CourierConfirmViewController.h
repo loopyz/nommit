@@ -11,6 +11,12 @@
 @interface CourierConfirmViewController : UIViewController
 
 @property (nonatomic, strong) NSDictionary *order;
+@property (nonatomic, strong) UILabel *restaurantName;
+@property (nonatomic, strong) UILabel *restaurantLocation;
+@property (nonatomic, strong) UILabel *customerName;
+@property (nonatomic, strong) UILabel *customerLocation;
+@property (nonatomic, strong) UILabel *food;
+@property (nonatomic, strong) UILabel *price;
 
 - (id)initWithOrder:(NSDictionary *)order;
 
