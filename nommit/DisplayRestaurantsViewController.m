@@ -16,7 +16,8 @@
 
 @implementation DisplayRestaurantsViewController
 {
-    NSArray* _restaurants;
+    NSMutableArray* _restaurants;
+    NSMutableArray* _restaurantsData;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -28,11 +29,67 @@
     return self;
 }
 
-- (id)initWithRestaurants:(NSArray*)restaurants
+- (id)initWithRestaurants:(NSArray*)restaurants_master
 {
     self = [super init];
     if (self){
-        _restaurants = restaurants;
+        _restaurants = [[NSMutableArray alloc] init];
+        _restaurantsData = [[NSMutableArray alloc] init];
+        
+        for (NSDictionary* myrestaurant in restaurants_master)
+        {
+            NSString *requestString = [NSString
+                                       stringWithFormat:@"http://api.locu.com/v1_0/venue/%@/?api_key=2fde854b70bc2db996860115e60a89c3d68bd858",
+                                       myrestaurant[@"id"]];
+            
+            NSURL *url = [[NSURL alloc] initWithString:requestString];
+            NSLog(@"%@", requestString);
+            
+            [NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:url] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                
+                if (error) {
+                    NSLog(@"Error %@; %@", error, [error localizedDescription]);
+                } else {
+                    NSError *localError = nil;
+                    NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
+                    
+                    NSArray *restaurants = parsedObject[@"objects"];
+                    NSDictionary *restaurant = restaurants[0];
+                    NSArray *menus = restaurant[@"menus"];
+                    
+                    NSMutableArray *menuItems = [[NSMutableArray alloc] init];
+                    
+                    for (NSDictionary *menu in menus)
+                    {
+                        NSArray *sections = menu[@"sections"];
+                        for (NSDictionary *section in sections)
+                        {
+                            NSArray *subsections = section[@"subsections"];
+                            for (NSDictionary *subsection in subsections)
+                            {
+                                NSArray *contents = subsection[@"contents"];
+                                for (NSDictionary *item in contents)
+                                {
+                                    if ([item[@"type"] isEqualToString:@"ITEM"])
+                                    {
+                                        if ([item objectForKey:@"price"])
+                                        {
+                                            [menuItems addObject:item];
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if ([menuItems count] > 0) {
+                        [_restaurants addObject:myrestaurant];
+                        [_restaurantsData addObject:menuItems];
+                        [self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
+                    }
+                }
+            }];
+        }
+        
         self.navigationItem.title = @"Restaurants";
     }
     return self;
@@ -98,6 +155,14 @@
 {
     NSLog(@"We selected something!");
     NSDictionary* restaurant = [_restaurants objectAtIndex:indexPath.row];
+    NSMutableArray* menuItems = [_restaurantsData objectAtIndex:indexPath.row];
+    NSLog(@"%@", [_restaurantsData objectAtIndex:indexPath.row]);
+    
+    MenuViewController *menuView = [[MenuViewController alloc] initWithMenuItems:menuItems andRestaurant:restaurant];
+    UINavigationController *menuViewNavController = [[UINavigationController alloc] initWithRootViewController:menuView];
+    [self presentViewController:menuViewNavController animated:YES completion:nil];
+    
+    return;
     
     NSString *requestString = [NSString
                                stringWithFormat:@"http://api.locu.com/v1_0/venue/%@/?api_key=2fde854b70bc2db996860115e60a89c3d68bd858",
