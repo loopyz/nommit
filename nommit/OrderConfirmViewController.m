@@ -47,10 +47,11 @@
     self.food.text = menu[@"name"];
     self.food.textAlignment = NSTextAlignmentLeft;
     
-    self.foodDescription = [[UILabel alloc] initWithFrame:CGRectMake(20, 190, screenWidth-40, 44)];
+    self.foodDescription = [[UILabel alloc] initWithFrame:CGRectMake(20, 200, screenWidth-40, 200)];
     self.foodDescription.text = menu[@"description"];
     self.foodDescription.textAlignment = NSTextAlignmentLeft;
     self.foodDescription.lineBreakMode = NSLineBreakByWordWrapping;
+    self.foodDescription.numberOfLines = 0;
     
     if (menu[@"price"]) {
         self.price = [[UILabel alloc] initWithFrame:CGRectMake(10, 150, screenWidth-20, 44)];

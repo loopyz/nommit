@@ -62,14 +62,15 @@
     self.food.text = order[@"food"][@"name"];
     self.food.textAlignment = NSTextAlignmentLeft;
     
-    self.foodDescription = [[UILabel alloc] initWithFrame:CGRectMake(20, 190, screenWidth-40, 44)];
+    self.foodDescription = [[UILabel alloc] initWithFrame:CGRectMake(20, 200, screenWidth-40, 200)];
     self.foodDescription.text = order[@"food"][@"description"];
     self.foodDescription.textAlignment = NSTextAlignmentLeft;
     self.foodDescription.lineBreakMode = NSLineBreakByWordWrapping;
+    self.foodDescription.numberOfLines = 0;
 
     if (order[@"price"]) {
         self.price = [[UILabel alloc] initWithFrame:CGRectMake(10, 150, screenWidth-20, 44)];
-        self.price.text = [@"$" stringByAppendingString:[order[@"price"] stringValue]];
+        self.price.text = order[@"price"];
         self.price.textAlignment = NSTextAlignmentRight;
         [self.view addSubview:self.price];
     }
