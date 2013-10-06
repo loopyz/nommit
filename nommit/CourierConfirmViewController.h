@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CourierConfirmViewController : UITableViewController
+@interface CourierConfirmViewController : UIViewController
+
+@property (nonatomic, strong) NSDictionary *order;
+
+- (id)initWithOrder:(NSDictionary *)order;
 
 @end
