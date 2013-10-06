@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8D1F949E180074A6005A86A5 /* GlossyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1F949D180074A6005A86A5 /* GlossyButton.m */; };
+		8D50985118015A5400A7E4B7 /* Geocoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D50985018015A5400A7E4B7 /* Geocoding.m */; };
 		8DBAFAA218012ED0004875CC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DBAFAA118012ED0004875CC /* Social.framework */; };
 		8DBAFAA418012ED7004875CC /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DBAFAA318012ED7004875CC /* Accounts.framework */; };
 		8DBAFAA618012F37004875CC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DBAFAA518012F37004875CC /* FacebookSDK.framework */; };
@@ -81,6 +82,8 @@
 /* Begin PBXFileReference section */
 		8D1F949C1800742B005A86A5 /* GlossyButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlossyButton.h; sourceTree = "<group>"; };
 		8D1F949D180074A6005A86A5 /* GlossyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlossyButton.m; sourceTree = "<group>"; };
+		8D50984F18015A5400A7E4B7 /* Geocoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Geocoding.h; sourceTree = "<group>"; };
+		8D50985018015A5400A7E4B7 /* Geocoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Geocoding.m; sourceTree = "<group>"; };
 		8DBAFAA118012ED0004875CC /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		8DBAFAA318012ED7004875CC /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		8DBAFAA518012F37004875CC /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
@@ -285,6 +288,8 @@
 				F3CA30B91800E01400914EA1 /* CourierViewController.m */,
 				8DFD66351801011000E7C9ED /* DisplayRestaurantsViewController.h */,
 				8DFD66361801011000E7C9ED /* DisplayRestaurantsViewController.m */,
+				8D50984F18015A5400A7E4B7 /* Geocoding.h */,
+				8D50985018015A5400A7E4B7 /* Geocoding.m */,
 				8D1F949C1800742B005A86A5 /* GlossyButton.h */,
 				8D1F949D180074A6005A86A5 /* GlossyButton.m */,
 				F3DF4A5917FA093F000B51E4 /* MapViewController.h */,
@@ -510,6 +515,7 @@
 				F3CA30BB1800E01400914EA1 /* CourierViewController.m in Sources */,
 				8DFD66371801011000E7C9ED /* DisplayRestaurantsViewController.m in Sources */,
 				F3DF4A6417FA0AC1000B51E4 /* CourierRegistrationViewController.m in Sources */,
+				8D50985118015A5400A7E4B7 /* Geocoding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

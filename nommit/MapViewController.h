@@ -12,11 +12,15 @@
 #import "RatingViewController.h"
 #import "RequestViewController.h"
 #import "CourierViewController.h"
+#import "Geocoding.h"
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController<UITextFieldDelegate>
+
+@property (strong, nonatomic) Geocoding *gs;
 
 @property (nonatomic, assign) NSInteger mode;
 @property (nonatomic, strong) NSString *orderKey;
+@property (strong, nonatomic) IBOutlet UITextField *myTextField;
 
 - (id)initWithMode:(NSInteger) mode andOrderKey:(NSString *)orderKey;
 
