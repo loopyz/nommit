@@ -14,10 +14,7 @@
 @property (nonatomic, strong) UILabel *customer;
 @property (nonatomic, strong) CLLocation *customerLocation;
 @property (nonatomic, strong) UILabel *restaurant;
-<<<<<<< HEAD
-@property (nonatomic, strong) CLLocation *customerLocation;
-=======
->>>>>>> bb4a38b80ab269805263aa105f95ce5b261b655a
+
 @property (nonatomic, strong) CLLocation *restaurantLocation;
 @property (nonatomic, strong) UITextField *food;
 @property (nonatomic, strong) UITextField *restaurantSearchText;

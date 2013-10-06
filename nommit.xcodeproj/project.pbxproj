@@ -11,6 +11,7 @@
 		8DEF3F791800B0FA005E2BDE /* RequestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF3F781800B0FA005E2BDE /* RequestView.m */; };
 		8DFD66291800E85D00E7C9ED /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFD66281800E85D00E7C9ED /* libicucore.dylib */; };
 		8DFD66321800F0DA00E7C9ED /* VenmoAppSwitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFD662F1800F0DA00E7C9ED /* VenmoAppSwitch.framework */; };
+		8DFD66341800F5C500E7C9ED /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFD66331800F5C500E7C9ED /* GoogleMaps.framework */; };
 		F370A44C18004EEC003B7DA8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370A44B18004EEC003B7DA8 /* CoreLocation.framework */; };
 		F370A44E18004F20003B7DA8 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370A44D18004F20003B7DA8 /* CoreImage.framework */; };
 		F370A45018004F72003B7DA8 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370A44F18004F72003B7DA8 /* CoreText.framework */; };
@@ -30,12 +31,8 @@
 		F3CA30BB1800E01400914EA1 /* CourierViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3CA30B91800E01400914EA1 /* CourierViewController.m */; };
 		F3CA30BD1800E03E00914EA1 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3CA30BC1800E03E00914EA1 /* Firebase.framework */; };
 		F3CA30BF1800E07800914EA1 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F3CA30BE1800E07800914EA1 /* GoogleMaps.bundle */; };
-<<<<<<< HEAD
-=======
-		F3CA30C11800E10500914EA1 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3CA30C01800E10500914EA1 /* GoogleMaps.framework */; };
 		F3CA32A91800EAC400914EA1 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3CA32A81800EAC400914EA1 /* AddressBook.framework */; };
 		F3CA32AB1800EAF600914EA1 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F3CA32AA1800EAF600914EA1 /* libicucore.dylib */; };
->>>>>>> bb4a38b80ab269805263aa105f95ce5b261b655a
 		F3DF4A2217FA07DF000B51E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DF4A2117FA07DF000B51E4 /* UIKit.framework */; };
 		F3DF4A2417FA07DF000B51E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DF4A2317FA07DF000B51E4 /* Foundation.framework */; };
 		F3DF4A2617FA07DF000B51E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DF4A2517FA07DF000B51E4 /* CoreGraphics.framework */; };
@@ -66,7 +63,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8D1F949618006EA2005A86A5 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleMaps.bundle; sourceTree = "<group>"; };
 		8D1F949C1800742B005A86A5 /* GlossyButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlossyButton.h; sourceTree = "<group>"; };
 		8D1F949D180074A6005A86A5 /* GlossyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlossyButton.m; sourceTree = "<group>"; };
 		8DEF3F771800B0FA005E2BDE /* RequestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestView.h; sourceTree = "<group>"; };
@@ -74,6 +70,7 @@
 		8DFD66281800E85D00E7C9ED /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		8DFD662A1800E94500E7C9ED /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = "../../../Downloads/GoogleMaps-iOS-1.5.0/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle"; sourceTree = "<group>"; };
 		8DFD662F1800F0DA00E7C9ED /* VenmoAppSwitch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VenmoAppSwitch.framework; path = "../../../Desktop/app-switch-ios-framework/VenmoAppSwitch.framework"; sourceTree = "<group>"; };
+		8DFD66331800F5C500E7C9ED /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = ../GoogleMaps.framework; sourceTree = "<group>"; };
 		F370A44B18004EEC003B7DA8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F370A44D18004F20003B7DA8 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		F370A44F18004F72003B7DA8 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -95,12 +92,8 @@
 		F3CA30B91800E01400914EA1 /* CourierViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourierViewController.m; sourceTree = "<group>"; };
 		F3CA30BC1800E03E00914EA1 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
 		F3CA30BE1800E07800914EA1 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleMaps.bundle; sourceTree = "<group>"; };
-<<<<<<< HEAD
-=======
-		F3CA30C01800E10500914EA1 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = "../../HackMIT/GoogleMaps-iOS-1.5.0/GoogleMaps.framework"; sourceTree = "<group>"; };
 		F3CA32A81800EAC400914EA1 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		F3CA32AA1800EAF600914EA1 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
->>>>>>> bb4a38b80ab269805263aa105f95ce5b261b655a
 		F3DF4A1E17FA07DF000B51E4 /* nommit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nommit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3DF4A2117FA07DF000B51E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F3DF4A2317FA07DF000B51E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -135,15 +128,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
+				8DFD66341800F5C500E7C9ED /* GoogleMaps.framework in Frameworks */,
 				F370A462180051AE003B7DA8 /* CFNetwork.framework in Frameworks */,
 				8DFD66291800E85D00E7C9ED /* libicucore.dylib in Frameworks */,
-				8D1F94B618009EC7005A86A5 /* FacebookSDK.framework in Frameworks */,
-				8D1F94B418009EAD005A86A5 /* GoogleMaps.framework in Frameworks */,
-=======
 				F3CA32AB1800EAF600914EA1 /* libicucore.dylib in Frameworks */,
 				F3CA32A91800EAC400914EA1 /* AddressBook.framework in Frameworks */,
->>>>>>> bb4a38b80ab269805263aa105f95ce5b261b655a
 				F370A46A18005766003B7DA8 /* StoreKit.framework in Frameworks */,
 				F370A46618005204003B7DA8 /* MobileCoreServices.framework in Frameworks */,
 				F370A464180051C8003B7DA8 /* SystemConfiguration.framework in Frameworks */,
@@ -201,20 +190,14 @@
 		F3DF4A2017FA07DF000B51E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
+				8DFD66331800F5C500E7C9ED /* GoogleMaps.framework */,
 				8DFD662A1800E94500E7C9ED /* GoogleMaps.bundle */,
 				8DFD662F1800F0DA00E7C9ED /* VenmoAppSwitch.framework */,
 				8DFD66281800E85D00E7C9ED /* libicucore.dylib */,
 				F3CA30BC1800E03E00914EA1 /* Firebase.framework */,
-				8D1F94B518009EC7005A86A5 /* FacebookSDK.framework */,
-				8D1F94B318009EAD005A86A5 /* GoogleMaps.framework */,
-=======
 				F3CA32AA1800EAF600914EA1 /* libicucore.dylib */,
 				F3CA32A81800EAC400914EA1 /* AddressBook.framework */,
-				F3CA30C01800E10500914EA1 /* GoogleMaps.framework */,
 				F3CA30BC1800E03E00914EA1 /* Firebase.framework */,
-				8DFD66261800D3BF00E7C9ED /* VenmoAppSwitch.framework */,
->>>>>>> bb4a38b80ab269805263aa105f95ce5b261b655a
 				F3CA30BE1800E07800914EA1 /* GoogleMaps.bundle */,
 				F370A46918005766003B7DA8 /* StoreKit.framework */,
 				F370A46518005204003B7DA8 /* MobileCoreServices.framework */,
@@ -231,7 +214,6 @@
 				F370A44F18004F72003B7DA8 /* CoreText.framework */,
 				F370A44D18004F20003B7DA8 /* CoreImage.framework */,
 				F370A44B18004EEC003B7DA8 /* CoreLocation.framework */,
-				8D1F949618006EA2005A86A5 /* GoogleMaps.bundle */,
 				F3DF4A2117FA07DF000B51E4 /* UIKit.framework */,
 				F3DF4A2317FA07DF000B51E4 /* Foundation.framework */,
 				F3DF4A2517FA07DF000B51E4 /* CoreGraphics.framework */,
@@ -568,11 +550,8 @@
 					/Users/Lucy/Documents/hackathons/nommit,
 					/Users/gregory/Documents/nommit,
 					"/Users/gregory/HackMIT/GoogleMaps-iOS-1.5.0",
-<<<<<<< HEAD
 					"/Users/Lucy/Desktop/app-switch-ios-framework",
-=======
 					/Users/gregory/Documents/FacebookSDK,
->>>>>>> bb4a38b80ab269805263aa105f95ce5b261b655a
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "nommit/nommit-Prefix.pch";
@@ -601,11 +580,8 @@
 					/Users/Lucy/Documents/hackathons/nommit,
 					/Users/gregory/Documents/nommit,
 					"/Users/gregory/HackMIT/GoogleMaps-iOS-1.5.0",
-<<<<<<< HEAD
 					"/Users/Lucy/Desktop/app-switch-ios-framework",
-=======
 					/Users/gregory/Documents/FacebookSDK,
->>>>>>> bb4a38b80ab269805263aa105f95ce5b261b655a
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "nommit/nommit-Prefix.pch";
