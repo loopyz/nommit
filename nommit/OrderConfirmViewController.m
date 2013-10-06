@@ -115,7 +115,7 @@
     Firebase *newOrderRef = [orderRef childByAutoId];
     
     [newOrderRef setValue:@{
-                            @"customer" : @{@"name" : @"Ivan Wang",
+                            @"customer" : @{@"name" : @"Angela Zhang",
                                             @"location": @"Krieger Stadium"},
                             @"restaurant" : @{@"name" : self.restaurantName.text,
                                               @"location": self.restaurantLocation.text},

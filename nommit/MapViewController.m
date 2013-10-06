@@ -226,7 +226,7 @@
     [textField setFont:[UIFont boldSystemFontOfSize:12]];
     
     //Placeholder text is displayed when no text is typed
-    textField.placeholder = @"Address";
+    textField.placeholder = @"      MIT ....... 1 courier available";
     
     
     //It set when the left prefixLabel to be displayed
