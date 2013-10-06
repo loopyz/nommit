@@ -115,6 +115,7 @@
     } else if (self.mode == 3) {
         [self initMode3Buttons];
     }
+    [self reloadInputViews];
 }
 
 - (void)didReceiveMemoryWarning
