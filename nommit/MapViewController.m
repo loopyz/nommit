@@ -83,11 +83,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSString *)estimatedWaitTime
+{
+    return @"5 min"; // TODO: generate formula for wait time
+}
+
 - (void)initMode1Buttons
 {
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     UILabel *waitingLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, screenRect.size.height-60, screenRect.size.width-40, 44)];
-    [waitingLabel setText:@"   Waiting for food..."];
+    NSString *waitTime = [self estimatedWaitTime];
+    [waitingLabel setText:[@"   Delivery in progress.  ETA: " stringByAppendingString:waitTime]];
     [waitingLabel setBackgroundColor:[UIColor whiteColor]];
     [self.view addSubview:waitingLabel];
 }
@@ -107,8 +113,8 @@
 
 - (void)initMode0Buttons
 {
-    UIBarButtonItem *driverButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(openCourierRegView)];
-    self.navigationItem.rightBarButtonItem = driverButton;
+    /*UIBarButtonItem *driverButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(openCourierRegView)];
+    self.navigationItem.rightBarButtonItem = driverButton;*/
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
@@ -182,9 +188,14 @@
 
 - (void)didCompleteDelivery
 {
-    NSLog(@"Delivered food!");
     // Send text to customer
+    NSString *urlAsString = [NSString stringWithFormat:@"http://twitterautomate.com/testapp/nommit_sms.php"];
+    NSURL *url = [[NSURL alloc] initWithString:urlAsString];
+    NSLog(@"Delivered food!");
     
+    // Reset mode
+    self.mode = 0;
+    [self reloadInputViews];
 }
 
 @end
