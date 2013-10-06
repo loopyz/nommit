@@ -87,8 +87,8 @@
 
 - (void)makeRequest
 {
-    //Make the food request!
-    //Venmo
+    // Make the food request! MOVE TO CourierConfirmViewController (courier charges customer)
+    // Venmo
     _venmoClient = [VenmoClient clientWithAppId:@"1422" secret:@"s5z3FenAVb7YYFPNbNKcHfeby6ACZMrV"];
     
     VenmoTransaction *venmoTransaction = [[VenmoTransaction alloc] init];
@@ -103,6 +103,7 @@
         [self presentModalViewController:venmoViewController animated:YES];
     }
     
+    // TEST after UI implemented for choosing restaurants!
     Firebase* newOrderRef = [_firebase childByAutoId];
     [newOrderRef setValue:@{
                             @"customer" : @{@"name" : _reqView.customer,
