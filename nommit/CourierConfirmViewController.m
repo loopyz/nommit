@@ -38,28 +38,48 @@
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height;
     
-    self.restaurantName = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, screenWidth, 44)];
+    self.restaurantName = [[UILabel alloc] initWithFrame:CGRectMake(10, 75, screenWidth-20, 44)];
     self.restaurantName.text = order[@"restaurant"][@"name"];
+    self.restaurantName.textAlignment = NSTextAlignmentCenter;
     
-    self.restaurantLocation = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, screenWidth, 44)];
+    self.restaurantLocation = [[UILabel alloc] initWithFrame:CGRectMake(10, 110, screenWidth-20, 44)];
     self.restaurantLocation.text = order[@"restaurant"][@"location"];
+    self.restaurantLocation.textAlignment = NSTextAlignmentCenter;
     
-    self.customerName = [[UILabel alloc] initWithFrame:CGRectMake(10, 90, screenWidth, 44)];
-    self.customerName.text = order[@"customer"][@"name"];
+    self.customerName = [[UILabel alloc] initWithFrame:CGRectMake(10, screenHeight-160,
+                                                                  screenWidth-20, 44)];
+    self.customerName.text = [@"Deliver to: " stringByAppendingString:order[@"customer"][@"name"]];
+    self.customerName.textAlignment = NSTextAlignmentCenter;
     
-    self.customerLocation = [[UILabel alloc] initWithFrame:CGRectMake(10, 140, screenWidth, 44)];
+    self.customerLocation = [[UILabel alloc] initWithFrame:CGRectMake(10, screenHeight-120,
+                                                                      screenWidth-20, 44)];
     self.customerLocation.text = order[@"customer"][@"location"];
+    self.customerLocation.textAlignment = NSTextAlignmentCenter;
     
-    self.food = [[UILabel alloc] initWithFrame:CGRectMake(10, 190, screenWidth, 44)];
-    self.food.text = order[@"food"];
-//    self.price=order[@"price"];
+    self.food = [[UILabel alloc] initWithFrame:CGRectMake(20, 150, screenWidth-40, 44)];
+    self.food.text = order[@"food"][@"name"];
+    self.food.textAlignment = NSTextAlignmentLeft;
     
+    self.foodDescription = [[UILabel alloc] initWithFrame:CGRectMake(20, 190, screenWidth-40, 44)];
+    self.foodDescription.text = order[@"food"][@"description"];
+    self.foodDescription.textAlignment = NSTextAlignmentLeft;
+
+    if (order[@"price"]) {
+        self.price = [[UILabel alloc] initWithFrame:CGRectMake(10, 150, screenWidth-20, 44)];
+        self.price.text = [@"$" stringByAppendingString:[order[@"price"] stringValue]];
+        self.price.textAlignment = NSTextAlignmentRight;
+        [self.view addSubview:self.price];
+    }
+        
     [self.view addSubview:self.restaurantName];
     [self.view addSubview:self.restaurantLocation];
     [self.view addSubview:self.customerName];
     [self.view addSubview:self.customerLocation];
     [self.view addSubview:self.food];
+    [self.view addSubview:self.foodDescription];
+
     
     return self;
 }

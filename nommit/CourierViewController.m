@@ -130,7 +130,7 @@
     cell.textLabel.text = order[@"restaurant"][@"name"];
     [[cell textLabel] setLineBreakMode:NSLineBreakByWordWrapping];
     
-    [[cell detailTextLabel] setText:order[@"food"]];
+    [[cell detailTextLabel] setText:order[@"food"][@"name"]];
     [[cell detailTextLabel] setLineBreakMode:NSLineBreakByWordWrapping];
     
     return cell;

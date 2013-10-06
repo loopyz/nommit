@@ -105,7 +105,8 @@
                                             @"location": _reqView.customerLocation},
                             @"restaurant" : @{@"name" : _restaurant[@"name"],
                                               @"location": _restaurant[@"street_address"]},
-                            @"food" : menu[@"name"],
+                            @"food" : @{@"name" : menu[@"name"],
+                                        @"description' : menu[@"description"]},
                             @"price" : menu[@"price"],
                             @"status" : @0
      }];*/
