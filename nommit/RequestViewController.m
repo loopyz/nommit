@@ -56,6 +56,30 @@
         for (NSDictionary *status in statuses) {
             NSLog(@"%@", [status objectForKey:@"name"]);
         }*/
+        
+        NSString *requestString = @"http://api.locu.com/v1_0/venue/search/?api_key=2fde854b70bc2db996860115e60a89c3d68bd858&country=United+States&region=CA&name=Bollyhood&description=best&location=37.78%2C+-122.42";
+        
+        NSURL *url = [[NSURL alloc] initWithString:requestString];
+        NSLog(@"%@", requestString);
+        
+        [NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:url] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+            
+            if (error) {
+                NSLog(@"Error %@; %@", error, [error localizedDescription]);
+            } else {
+                NSLog(@"success");
+                NSError *localError = nil;
+                NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
+                
+                NSArray *restaurants = parsedObject[@"objects"];
+                NSDictionary *restaurant = restaurants[0]; // TODO: empty?
+                NSString *name = restaurant[@"name"];
+                NSLog(@"%@", name);
+                
+            }
+        }];
+        
+        
     }
     return self;
 }
