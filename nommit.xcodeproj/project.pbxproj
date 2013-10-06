@@ -44,6 +44,8 @@
 		F3CA32BB18014A7700914EA1 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F3CA32B918014A7700914EA1 /* icon@2x.png */; };
 		F3CA32BD18014B4800914EA1 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F3CA32BC18014B4800914EA1 /* icon.png */; };
 		F3CA32BF18014B4E00914EA1 /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = F3CA32BE18014B4E00914EA1 /* icon2.png */; };
+		F3CA32C1180158A600914EA1 /* FirebaseSimpleLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3CA32C0180158A600914EA1 /* FirebaseSimpleLogin.framework */; };
+		F3CA32C31801593300914EA1 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3CA32C21801593300914EA1 /* FacebookSDK.framework */; };
 		F3DF4A2217FA07DF000B51E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DF4A2117FA07DF000B51E4 /* UIKit.framework */; };
 		F3DF4A2417FA07DF000B51E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DF4A2317FA07DF000B51E4 /* Foundation.framework */; };
 		F3DF4A2617FA07DF000B51E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DF4A2517FA07DF000B51E4 /* CoreGraphics.framework */; };
@@ -120,6 +122,8 @@
 		F3CA32B918014A7700914EA1 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		F3CA32BC18014B4800914EA1 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		F3CA32BE18014B4E00914EA1 /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.png; sourceTree = "<group>"; };
+		F3CA32C0180158A600914EA1 /* FirebaseSimpleLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseSimpleLogin.framework; path = ../../HackMIT/FirebaseSimpleLogin.framework; sourceTree = "<group>"; };
+		F3CA32C21801593300914EA1 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		F3DF4A1E17FA07DF000B51E4 /* nommit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nommit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3DF4A2117FA07DF000B51E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F3DF4A2317FA07DF000B51E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -165,9 +169,11 @@
 				F370A46A18005766003B7DA8 /* StoreKit.framework in Frameworks */,
 				F370A46618005204003B7DA8 /* MobileCoreServices.framework in Frameworks */,
 				F370A464180051C8003B7DA8 /* SystemConfiguration.framework in Frameworks */,
+				F3CA32C31801593300914EA1 /* FacebookSDK.framework in Frameworks */,
 				F370A4601800519B003B7DA8 /* Security.framework in Frameworks */,
 				F370A45E180050C9003B7DA8 /* OpenGLES.framework in Frameworks */,
 				8DBAFAA618012F37004875CC /* FacebookSDK.framework in Frameworks */,
+				F3CA32C1180158A600914EA1 /* FirebaseSimpleLogin.framework in Frameworks */,
 				F370A45C18005080003B7DA8 /* AudioToolbox.framework in Frameworks */,
 				F370A45A1800505C003B7DA8 /* libc++.dylib in Frameworks */,
 				F370A45818005034003B7DA8 /* CoreData.framework in Frameworks */,
@@ -220,7 +226,9 @@
 		F3DF4A2017FA07DF000B51E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F3CA32C21801593300914EA1 /* FacebookSDK.framework */,
 				8DBAFAA518012F37004875CC /* FacebookSDK.framework */,
+				F3CA32C0180158A600914EA1 /* FirebaseSimpleLogin.framework */,
 				8DBAFAA318012ED7004875CC /* Accounts.framework */,
 				8DBAFAA118012ED0004875CC /* Social.framework */,
 				8DFD663B18012E8C00E7C9ED /* FirebaseSimpleLogin.framework */,
@@ -606,6 +614,7 @@
 					/Users/gregory/Documents/FacebookSDK,
 					"/Users/gregory/dev/app-switch-ios-framework-master",
 					"/Users/gregory/dev/GoogleMaps-iOS-1.5.0",
+					/Users/gregory/HackMIT,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "nommit/nommit-Prefix.pch";
@@ -638,6 +647,7 @@
 					/Users/gregory/Documents/FacebookSDK,
 					"/Users/gregory/dev/app-switch-ios-framework-master",
 					"/Users/gregory/dev/GoogleMaps-iOS-1.5.0",
+					/Users/gregory/HackMIT,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "nommit/nommit-Prefix.pch";

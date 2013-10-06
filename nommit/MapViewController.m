@@ -183,6 +183,8 @@
 - (void)didCompleteDelivery
 {
     NSLog(@"Delivered food!");
+    // Send text to customer
+    
 }
 
 @end
