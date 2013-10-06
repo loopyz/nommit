@@ -65,6 +65,7 @@
     self.foodDescription = [[UILabel alloc] initWithFrame:CGRectMake(20, 190, screenWidth-40, 44)];
     self.foodDescription.text = order[@"food"][@"description"];
     self.foodDescription.textAlignment = NSTextAlignmentLeft;
+    self.foodDescription.lineBreakMode = NSLineBreakByWordWrapping;
 
     if (order[@"price"]) {
         self.price = [[UILabel alloc] initWithFrame:CGRectMake(10, 150, screenWidth-20, 44)];

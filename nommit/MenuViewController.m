@@ -7,7 +7,7 @@
 //
 
 #import "MenuViewController.h"
-#import <Firebase/Firebase.h>
+#import "OrderConfirmViewController.h"
 
 @interface MenuViewController ()
 
@@ -17,14 +17,12 @@
 {
     NSArray* _menu;
     NSDictionary* _restaurant;
-    Firebase *_firebase;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        _firebase = [[Firebase alloc] initWithUrl:@"https://nommit.firebaseio.com/"];
     }
     return self;
 }
@@ -98,22 +96,10 @@
     NSLog(@"We selected something from the menu!");
     NSDictionary* menu = [_menu objectAtIndex:indexPath.row];
     
-    // TEST after UI implemented for choosing restaurants!
-    Firebase* newOrderRef = [_firebase childByAutoId];
-    /*[newOrderRef setValue:@{
-                            @"customer" : @{@"name" : _reqView.customer,
-                                            @"location": _reqView.customerLocation},
-                            @"restaurant" : @{@"name" : _restaurant[@"name"],
-                                              @"location": _restaurant[@"street_address"]},
-                            @"food" : @{@"name" : menu[@"name"],
-                                        @"description' : menu[@"description"]},
-                            @"price" : menu[@"price"],
-                            @"status" : @0
-     }];*/
-    
-    //CourierConfirmViewController *ccvc = [[CourierConfirmViewController alloc] initWithOrder:order];
-    //UINavigationController *ccvcNavController = [[UINavigationController alloc] initWithRootViewController:ccvc];
-    //[self presentViewController:ccvcNavController animated:YES completion:nil];
+    OrderConfirmViewController *ocvc = [[OrderConfirmViewController alloc] initWithMenu:menu
+                                                                          andRestaurant:_restaurant];
+    UINavigationController *ocvcNavController = [[UINavigationController alloc] initWithRootViewController:ocvc];
+    [self presentViewController:ocvcNavController animated:YES completion:nil];
 }
 
 /*
