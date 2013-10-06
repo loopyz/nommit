@@ -46,6 +46,9 @@
 		F3CA32BF18014B4E00914EA1 /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = F3CA32BE18014B4E00914EA1 /* icon2.png */; };
 		F3CA32C1180158A600914EA1 /* FirebaseSimpleLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3CA32C0180158A600914EA1 /* FirebaseSimpleLogin.framework */; };
 		F3CA32C31801593300914EA1 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3CA32C21801593300914EA1 /* FacebookSDK.framework */; };
+		F3CA32C61801604C00914EA1 /* courier.png in Resources */ = {isa = PBXBuildFile; fileRef = F3CA32C41801604C00914EA1 /* courier.png */; };
+		F3CA32C71801604C00914EA1 /* courier@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F3CA32C51801604C00914EA1 /* courier@2x.png */; };
+		F3CA32C91801628F00914EA1 /* nommit.png in Resources */ = {isa = PBXBuildFile; fileRef = F3CA32C81801628F00914EA1 /* nommit.png */; };
 		F3DF4A2217FA07DF000B51E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DF4A2117FA07DF000B51E4 /* UIKit.framework */; };
 		F3DF4A2417FA07DF000B51E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DF4A2317FA07DF000B51E4 /* Foundation.framework */; };
 		F3DF4A2617FA07DF000B51E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DF4A2517FA07DF000B51E4 /* CoreGraphics.framework */; };
@@ -124,6 +127,9 @@
 		F3CA32BE18014B4E00914EA1 /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.png; sourceTree = "<group>"; };
 		F3CA32C0180158A600914EA1 /* FirebaseSimpleLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseSimpleLogin.framework; path = ../../HackMIT/FirebaseSimpleLogin.framework; sourceTree = "<group>"; };
 		F3CA32C21801593300914EA1 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		F3CA32C41801604C00914EA1 /* courier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = courier.png; sourceTree = "<group>"; };
+		F3CA32C51801604C00914EA1 /* courier@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "courier@2x.png"; sourceTree = "<group>"; };
+		F3CA32C81801628F00914EA1 /* nommit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nommit.png; sourceTree = "<group>"; };
 		F3DF4A1E17FA07DF000B51E4 /* nommit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nommit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3DF4A2117FA07DF000B51E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F3DF4A2317FA07DF000B51E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -291,9 +297,9 @@
 				F3DF4A6017FA0A82000B51E4 /* RequestViewController.m */,
 				8DFD66381801139100E7C9ED /* MenuViewController.h */,
 				8DFD66391801139100E7C9ED /* MenuViewController.m */,
-				F3DF4A2817FA07DF000B51E4 /* Supporting Files */,
 				8DBAFAA71801319C004875CC /* LoginViewController.h */,
 				8DBAFAA81801319C004875CC /* LoginViewController.m */,
+				F3DF4A2817FA07DF000B51E4 /* Supporting Files */,
 			);
 			path = nommit;
 			sourceTree = "<group>";
@@ -301,6 +307,9 @@
 		F3DF4A2817FA07DF000B51E4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F3CA32C81801628F00914EA1 /* nommit.png */,
+				F3CA32C41801604C00914EA1 /* courier.png */,
+				F3CA32C51801604C00914EA1 /* courier@2x.png */,
 				F3CA32B918014A7700914EA1 /* icon@2x.png */,
 				F3CA32BC18014B4800914EA1 /* icon.png */,
 				F3CA32BE18014B4E00914EA1 /* icon2.png */,
@@ -447,9 +456,12 @@
 				F3DF4A3617FA07DF000B51E4 /* Default@2x.png in Resources */,
 				F3CA32BD18014B4800914EA1 /* icon.png in Resources */,
 				F3CA30BF1800E07800914EA1 /* GoogleMaps.bundle in Resources */,
+				F3CA32C71801604C00914EA1 /* courier@2x.png in Resources */,
 				F3DF4A3817FA07DF000B51E4 /* Default-568h@2x.png in Resources */,
 				F3CA32BF18014B4E00914EA1 /* icon2.png in Resources */,
+				F3CA32C91801628F00914EA1 /* nommit.png in Resources */,
 				F3CA32BB18014A7700914EA1 /* icon@2x.png in Resources */,
+				F3CA32C61801604C00914EA1 /* courier.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

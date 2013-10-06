@@ -46,7 +46,14 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.navigationItem.title = @"nommit";
+        //self.navigationItem.title = @"nommit";
+        
+        UIView *logoView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 200, 44)];
+        UIImageView *titleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nommit"]];
+        titleImageView.frame = CGRectMake(18, -8, titleImageView.frame.size.width/4, titleImageView.frame.size.height/4);
+        [logoView addSubview:titleImageView];
+        
+        self.navigationItem.titleView = logoView;
         [self initNewCourierButton];
     }
     return self;
@@ -138,14 +145,16 @@
 
 - (void)initNewCourierButton
 {
-    //If we want a custom button image
-    //UIImage *image = [UIImage imageNamed:@"IMAGENAME"];
-    //UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    //[button setBackgroundImage: [image stretchableImageWithLeftCapWidth:7.0 topCapHeight:0.0] forState:UIControlStateNormal];
-    //button.frame = CGRectMake(0.0, 0.0, image.size.width, image.size.height);
-    //[button addTarget:self action:@selector(SELECTOR)    forControlEvents:UIControlEventTouchUpInside];
+    UIImage *image = [UIImage imageNamed:@"courier"];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button setBackgroundImage: [image stretchableImageWithLeftCapWidth:7.0 topCapHeight:0.0] forState:UIControlStateNormal];
+    button.frame = CGRectMake(0.0, 0.0, image.size.width, image.size.height);
+    [button addTarget:self action:@selector(openCourierView) forControlEvents:UIControlEventTouchUpInside];
     
-    //UIView *v= [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, image.size.width, image.size.height) ];
+    UIBarButtonItem *leftbbi = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.leftBarButtonItem = leftbbi;
+    //UIView *v= [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0,
+    //                                                    image.size.width, image.size.height)];
     //[v addSubview:button];
     
     NSString *urlAsString = [NSString stringWithFormat:@"http://api.locu.com/v1_0/venue/search/api_key=2fde854b70bc2db996860115e60a89c3d68bd858&country=United+States&region=CA&name=Bollyhood&description=best&location=37.78,122.42"];
@@ -161,8 +170,8 @@
         }
     }];*/
     
-    UIBarButtonItem *courierRequestButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(openCourierView)];
-    self.navigationItem.leftBarButtonItem = courierRequestButton;
+    //UIBarButtonItem *courierRequestButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(openCourierView)];
+    //self.navigationItem.leftBarButtonItem = courierRequestButton;
 }
 
 - (void)openRequestView
