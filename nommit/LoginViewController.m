@@ -86,6 +86,7 @@
                          } else  {
                              // We have a logged in facebook user
                              NSLog(@"Good job!");
+                             NSLog(@"%@", user.thirdPartyUserData[@"displayName"]);
                              
                              MapViewController *mvc = [[MapViewController alloc] init];
                              UINavigationController *mvcNavController = [[UINavigationController alloc] initWithRootViewController:mvc];
