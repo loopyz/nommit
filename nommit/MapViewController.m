@@ -286,6 +286,8 @@
 
 - (void)didCompleteDelivery
 {
+    // TODO: test this
+    
     // Complete order
     Firebase *orderRef = [[Firebase alloc] initWithUrl:[@"https://nommit.firebaseio.com/orders/" stringByAppendingString:_orderKey]];
     [[orderRef childByAppendingPath:@"status"] setValue:@2];
@@ -295,6 +297,16 @@
     NSString *urlAsString = [NSString stringWithFormat:@"http://twitterautomate.com/testapp/nommit_sms.php"];
     NSURL *url = [[NSURL alloc] initWithString:urlAsString];
     NSLog(@"Delivered food!");
+    
+    [NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:url] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        
+        if (error) {
+            NSLog(@"Error %@; %@", error, [error localizedDescription]);
+        } else {
+            NSLog(@"Twilio'd");
+        }
+    }];
+    
     
     // TODO: uialertview
     
