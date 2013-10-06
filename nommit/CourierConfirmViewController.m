@@ -98,7 +98,8 @@
         } else {
             NSLog(@"Order confirmed!");
             [[orderRef childByAppendingPath:@"status"] setValue:@1];
-            // Return to MapView
+            // TODO: Return to MapView and return order
+            [self handleConfirmation];
         }
     }];
 }
@@ -119,6 +120,14 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)handleConfirmation
+{
+    if ([self.delegate respondsToSelector:@selector(courierConfirmViewController:didCompleteOrder:)]) {
+        [self.delegate courierConfirmViewController:self didCompleteOrder:self.order];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 @end

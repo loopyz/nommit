@@ -7,9 +7,9 @@
 //
 
 #import <Firebase/Firebase.h>
-
 #import <UIKit/UIKit.h>
+#import "CourierConfirmViewController.h"
 
-@interface CourierViewController : UITableViewController
+@interface CourierViewController : UITableViewController <CourierConfirmViewControllerDelegate>
 
 @end

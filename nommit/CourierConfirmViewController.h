@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol CourierConfirmViewControllerDelegate;
+
+
 @interface CourierConfirmViewController : UIViewController
 
 @property (nonatomic, strong) NSDictionary *order;
@@ -21,5 +24,14 @@
 @property (nonatomic, strong) UILabel *price;
 
 - (id)initWithOrder:(NSDictionary *)order andKey:(NSString *)orderKey;
+
+@property (nonatomic, weak) id <CourierConfirmViewControllerDelegate> delegate;
+
+@end
+
+
+@protocol CourierConfirmViewControllerDelegate <NSObject>
+
+- (void)courierConfirmViewController:(CourierConfirmViewController *)viewController didCompleteOrder:(NSDictionary *)order;
 
 @end
