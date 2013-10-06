@@ -24,7 +24,22 @@
     if (self) {
         [self initButtons];
         [self.view setBackgroundColor:[UIColor whiteColor]];
-        // Custom initialization
+        
+        // Initialize labels
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        CGFloat screenWidth = screenRect.size.width;
+        
+        self.restaurantName = [[UILabel alloc] initWithFrame:CGRectMake(10, 75, screenWidth-20, 44)];
+        self.restaurantName.text = @"";
+        self.restaurantLocation = [[UILabel alloc] initWithFrame:CGRectMake(10, 110, screenWidth-20, 44)];
+        self.restaurantLocation.text = @"";
+        self.food = [[UILabel alloc] initWithFrame:CGRectMake(20, 150, screenWidth-40, 44)];
+        self.food.text = @"";
+        self.foodDescription = [[UILabel alloc] initWithFrame:CGRectMake(20, 200, screenWidth-40, 200)];
+        self.foodDescription.text = @"";
+        self.price = [[UILabel alloc] initWithFrame:CGRectMake(10, 150, screenWidth-20, 44)];
+        self.price.text = @"";
+        
     }
     return self;
 }
@@ -33,39 +48,38 @@
 {
     self = [self initWithNibName:nil bundle:nil];
     
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    CGFloat screenWidth = screenRect.size.width;
+    if (restaurant[@"name"]) {
+        self.restaurantName.text = restaurant[@"name"];
+        self.restaurantName.textAlignment = NSTextAlignmentCenter;
+    }
     
-    self.restaurantName = [[UILabel alloc] initWithFrame:CGRectMake(10, 75, screenWidth-20, 44)];
-    self.restaurantName.text = restaurant[@"name"];
-    self.restaurantName.textAlignment = NSTextAlignmentCenter;
+    if (restaurant[@"street_address"]) {
+        self.restaurantLocation.text = restaurant[@"street_address"];
+        self.restaurantLocation.textAlignment = NSTextAlignmentCenter;
+    }
     
-    self.restaurantLocation = [[UILabel alloc] initWithFrame:CGRectMake(10, 110, screenWidth-20, 44)];
-    self.restaurantLocation.text = restaurant[@"street_address"];
-    self.restaurantLocation.textAlignment = NSTextAlignmentCenter;
+    if (menu[@"name"]) {
+        self.food.text = menu[@"name"];
+        self.food.textAlignment = NSTextAlignmentLeft;
+    }
     
-    self.food = [[UILabel alloc] initWithFrame:CGRectMake(20, 150, screenWidth-40, 44)];
-    self.food.text = menu[@"name"];
-    self.food.textAlignment = NSTextAlignmentLeft;
-    
-    self.foodDescription = [[UILabel alloc] initWithFrame:CGRectMake(20, 200, screenWidth-40, 200)];
-    self.foodDescription.text = menu[@"description"];
-    self.foodDescription.textAlignment = NSTextAlignmentLeft;
-    self.foodDescription.lineBreakMode = NSLineBreakByWordWrapping;
-    self.foodDescription.numberOfLines = 0;
+    if (menu[@"description"]) {
+        self.foodDescription.text = menu[@"description"];
+        self.foodDescription.textAlignment = NSTextAlignmentLeft;
+        self.foodDescription.lineBreakMode = NSLineBreakByWordWrapping;
+        self.foodDescription.numberOfLines = 0;
+    }
     
     if (menu[@"price"]) {
-        self.price = [[UILabel alloc] initWithFrame:CGRectMake(10, 150, screenWidth-20, 44)];
         self.price.text = [@"$" stringByAppendingString:menu[@"price"]];
         self.price.textAlignment = NSTextAlignmentRight;
-        [self.view addSubview:self.price];
     }
     
     [self.view addSubview:self.restaurantName];
     [self.view addSubview:self.restaurantLocation];
     [self.view addSubview:self.food];
     [self.view addSubview:self.foodDescription];
-    
+    [self.view addSubview:self.price];
     
     return self;
 }
