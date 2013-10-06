@@ -27,12 +27,13 @@
     return self;
 }
 
--(id)initWithMenuItems:(NSArray*)menuItems andRestaurant:(NSDictionary*)restaurant
+- (id)initWithMenuItems:(NSArray*)menuItems andRestaurant:(NSDictionary*)restaurant
 {
     self = [super init];
-    if (self){
+    if (self) {
         _menu = menuItems;
         _restaurant = restaurant;
+        self.navigationItem.title = @"Menu";
     }
     return self;
 }
@@ -46,6 +47,9 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissMenu)];
+    self.navigationItem.leftBarButtonItem = backButton;
 }
 
 - (void)didReceiveMemoryWarning
@@ -100,6 +104,11 @@
                                                                           andRestaurant:_restaurant];
     UINavigationController *ocvcNavController = [[UINavigationController alloc] initWithRootViewController:ocvc];
     [self presentViewController:ocvcNavController animated:YES completion:nil];
+}
+
+- (void)dismissMenu
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*

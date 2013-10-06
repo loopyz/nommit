@@ -15,8 +15,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         int width = frame.size.width;
-        int height = frame.size.height;
-        
+    
         _restaurantSearchText = [[UITextField alloc] initWithFrame:CGRectMake(10, 0, width-50, 44)];
         _searchButton = [[UIButton buttonWithType:UIButtonTypeCustom] initWithFrame:CGRectMake(width-40, 0, 20, 44)];
         [_searchButton setTitle:@"Search" forState:UIControlStateNormal];

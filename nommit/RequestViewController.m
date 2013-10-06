@@ -32,11 +32,7 @@
         self.view = _reqView;
         _reqView.delegate = self;
         
-        self.navigationItem.title = @"Request Food";
-        
-        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissRequest)];
-        self.navigationItem.leftBarButtonItem = backButton;
-        
+        self.navigationItem.title = @"Loading Restaurants...";
         self.view.backgroundColor = [UIColor whiteColor];
         
         
@@ -58,6 +54,9 @@
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissRequest)];
+    self.navigationItem.leftBarButtonItem = backButton;
 }
 
 #pragma mark - CLLocationManagerDelegate
@@ -102,7 +101,8 @@
                 // ADD: time estimating function
                 
                 DisplayRestaurantsViewController *restaurantView = [[DisplayRestaurantsViewController alloc] initWithRestaurants:restaurants];
-                [self presentViewController:restaurantView animated:YES completion:nil];
+                UINavigationController *restaurantViewNavController = [[UINavigationController alloc] initWithRootViewController:restaurantView];
+                [self presentViewController:restaurantViewNavController animated:YES completion:nil];
             }
         }];
     }
@@ -119,11 +119,6 @@
     MapViewController *mvc = [[MapViewController alloc] init];
     UINavigationController *mvcNavController = [[UINavigationController alloc] initWithRootViewController:mvc];
     [self.navigationController presentViewController:mvcNavController animated:YES completion:nil];
-}
-
-- (void)makeRequest
-{
-    // Make the food request!
 }
 
 

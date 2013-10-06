@@ -7,6 +7,7 @@
 //
 
 #import "OrderConfirmViewController.h"
+#import "MapViewController.h"
 #import "GlossyButton.h"
 #import <Firebase/Firebase.h>
 
@@ -111,7 +112,6 @@
      }];
 
     NSLog(@"Order confirmed!");
-    // TODO: Return to MapView and return order
     [self handleConfirmation];
 }
 
@@ -139,6 +139,11 @@
         [self.delegate orderConfirmViewController:self didCompleteOrder:self.order];
         [self dismissViewControllerAnimated:YES completion:nil];
     }*/
+    
+    // TODO: Return to MapView and return order
+    MapViewController *mvc = [[MapViewController alloc] init];
+    UINavigationController *mvcNavController = [[UINavigationController alloc] initWithRootViewController:mvc];
+    [self presentViewController:mvcNavController animated:YES completion:nil];
 }
 
 @end

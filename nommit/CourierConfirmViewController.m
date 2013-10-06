@@ -7,6 +7,7 @@
 //
 
 #import "CourierConfirmViewController.h"
+#import "MapViewController.h"
 #import "GlossyButton.h"
 #import <Firebase/Firebase.h>
 #import <VenmoAppSwitch/Venmo.h>
@@ -123,7 +124,6 @@
         } else {
             NSLog(@"Order confirmed!");
             [[orderRef childByAppendingPath:@"status"] setValue:@1];
-            // TODO: Return to MapView and return order
             [self handleConfirmation];
         }
     }];
@@ -164,10 +164,15 @@
         [self presentModalViewController:venmoViewController animated:YES];
     }
 
-    if ([self.delegate respondsToSelector:@selector(courierConfirmViewController:didCompleteOrder:)]) {
+    /*if ([self.delegate respondsToSelector:@selector(courierConfirmViewController:didCompleteOrder:)]) {
         [self.delegate courierConfirmViewController:self didCompleteOrder:self.order];
         [self dismissViewControllerAnimated:YES completion:nil];
-    }
+    }*/
+    
+    // TODO: Return to MapView and return order
+    MapViewController *mvc = [[MapViewController alloc] init];
+    UINavigationController *mvcNavController = [[UINavigationController alloc] initWithRootViewController:mvc];
+    [self presentViewController:mvcNavController animated:YES completion:nil];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
