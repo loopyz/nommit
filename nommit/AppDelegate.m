@@ -21,7 +21,10 @@
     
     //UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:[[MapViewController alloc] init]];
     
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[LoginViewController alloc] init]];
+    // TODO: delete this and go back to using FB?
+    // TODO; phone number
+    //self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[LoginViewController alloc] init]];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[MapViewController alloc] init]];
     
     //[self.window.rootViewController presentViewController:navController animated:YES completion:nil];
     

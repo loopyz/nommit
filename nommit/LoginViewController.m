@@ -73,6 +73,11 @@
                }
            }];*/
     
+    
+    MapViewController *mvc = [[MapViewController alloc] init];
+    UINavigationController *mvcNavController = [[UINavigationController alloc] initWithRootViewController:mvc];
+    [self.navigationController presentViewController:mvcNavController animated:YES completion:nil];
+    
     [authClient loginToFacebookAppWithId:@"205557856291924" permissions:@[@"email"]
                                 audience:ACFacebookAudienceOnlyMe
                      withCompletionBlock:^(NSError *error, FAUser *user) {
