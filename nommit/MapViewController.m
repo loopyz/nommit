@@ -12,7 +12,6 @@
 
 @interface MapViewController ()
 
-
 @end
 
 @implementation MapViewController {
@@ -36,6 +35,9 @@
 
 - (id)init{
     self = [self initWithNibName:nil bundle:nil];
+    if (self) {
+        self.mode = 0;
+    }
     return self;
 }
 
@@ -45,7 +47,17 @@
     if (self) {
         self.navigationItem.title = @"nommit";
         [self initNewCourierButton];
-        [self initNewFoodRequestButtonAndAddressLabel];
+    }
+    return self;
+}
+
+- (id)initWithMode:(NSInteger)mode
+{
+    self = [self initWithNibName:nil bundle:nil];
+    if (self) {
+        self.mode = mode;
+        NSLog(@"Initiating mode: %d", mode);
+        
     }
     return self;
 }
@@ -54,6 +66,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    if (self.mode == 0) {
+        [self initMode0Buttons];
+    } else if (self.mode == 1) {
+        [self initMode1Buttons];
+    } else if (self.mode == 2) {
+        [self initMode2Buttons];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,7 +82,29 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)initNewFoodRequestButtonAndAddressLabel
+- (void)initMode1Buttons
+{
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    UILabel *waitingLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, screenRect.size.height-60, screenRect.size.width-40, 44)];
+    [waitingLabel setText:@"   Waiting for food..."];
+    [waitingLabel setBackgroundColor:[UIColor whiteColor]];
+    [self.view addSubview:waitingLabel];
+}
+
+- (void)initMode2Buttons
+{
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height;
+    
+    CGRect rect = CGRectMake(10,screenHeight-50,screenWidth-20,44);
+    UIColor *buttonColor = [[UIColor alloc] initWithRed:174.0/255 green:134.0/255 blue:191.0/255 alpha:1];
+    GlossyButton *glossyBtn = [[GlossyButton alloc] initWithFrame:rect withBackgroundColor:buttonColor];
+    [glossyBtn setTitle:@"Complete Delivery" forState:UIControlStateNormal];
+    [glossyBtn addTarget:self action:@selector(didCompleteDelivery) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)initMode0Buttons
 {
     UIBarButtonItem *driverButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(openCourierRegView)];
     self.navigationItem.rightBarButtonItem = driverButton;
@@ -133,7 +175,13 @@
 - (void)openCourierView
 {
     CourierViewController *courierView = [[CourierViewController alloc] init];
-    [self presentViewController:courierView animated:YES completion:nil];
+    UINavigationController *courierViewNavController = [[UINavigationController alloc] initWithRootViewController:courierView];
+    [self presentViewController:courierViewNavController animated:YES completion:nil];
+}
+
+- (void)didCompleteDelivery
+{
+    NSLog(@"Delivered food!");
 }
 
 @end

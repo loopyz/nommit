@@ -45,9 +45,8 @@
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissMenu)];
+    self.navigationItem.leftBarButtonItem = backButton;
 }
 
 // Loads stored orders from Firebase
@@ -146,6 +145,10 @@
     [self presentViewController:ccvcNavController animated:YES completion:nil];
 }
 
+- (void)dismissMenu
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

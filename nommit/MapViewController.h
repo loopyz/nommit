@@ -14,4 +14,8 @@
 
 @interface MapViewController : UIViewController
 
+@property (nonatomic, assign) NSInteger mode;
+
+- (id)initWithMode:(NSInteger) mode;
+
 @end
