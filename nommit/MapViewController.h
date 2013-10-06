@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Firebase/Firebase.h>
 #import "CourierRegistrationViewController.h"
 #import "RatingViewController.h"
 #import "RequestViewController.h"
@@ -18,13 +19,10 @@
 @property (strong, nonatomic) Geocoding *gs;
 
 @property (nonatomic, assign) NSInteger mode;
-
+@property (nonatomic, strong) NSString *orderKey;
 @property (strong, nonatomic) IBOutlet UITextField *myTextField;
 @property (nonatomic, strong) UITextField *textField;
 
-
-
-
-- (id)initWithMode:(NSInteger) mode;
+- (id)initWithMode:(NSInteger) mode andOrderKey:(NSString *)orderKey;
 
 @end

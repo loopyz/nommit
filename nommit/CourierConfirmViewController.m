@@ -172,7 +172,7 @@
     }*/
     
     // TODO: Return to MapView and return order
-    MapViewController *mvc = [[MapViewController alloc] initWithMode:2];
+    MapViewController *mvc = [[MapViewController alloc] initWithMode:3 andOrderKey:self.orderKey];
     UINavigationController *mvcNavController = [[UINavigationController alloc] initWithRootViewController:mvc];
     [self presentViewController:mvcNavController animated:YES completion:nil];
 }

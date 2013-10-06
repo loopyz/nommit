@@ -126,6 +126,7 @@
      }];
 
     NSLog(@"Order confirmed!");
+    self.orderKey = newOrderRef.name;
     [self handleConfirmation];
 }
 
@@ -155,7 +156,7 @@
     }*/
     
     // TODO: Return to MapView and return order
-    MapViewController *mvc = [[MapViewController alloc] initWithMode: 1];
+    MapViewController *mvc = [[MapViewController alloc] initWithMode: 1 andOrderKey:self.orderKey];
     UINavigationController *mvcNavController = [[UINavigationController alloc] initWithRootViewController:mvc];
     [self presentViewController:mvcNavController animated:YES completion:nil];
 }
