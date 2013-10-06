@@ -39,7 +39,7 @@
         for (NSDictionary* myrestaurant in restaurants_master)
         {
             NSString *requestString = [NSString
-                                       stringWithFormat:@"http://api.locu.com/v1_0/venue/%@/?api_key=2fde854b70bc2db996860115e60a89c3d68bd858",
+                                       stringWithFormat:@"http://api.locu.com/v1_0/venue/%@/?api_key=bf748001618d2abadd62f21440b39f26cd89c515",
                                        myrestaurant[@"id"]];
             
             NSURL *url = [[NSURL alloc] initWithString:requestString];
@@ -165,7 +165,7 @@
     return;
     
     NSString *requestString = [NSString
-                               stringWithFormat:@"http://api.locu.com/v1_0/venue/%@/?api_key=2fde854b70bc2db996860115e60a89c3d68bd858",
+                               stringWithFormat:@"http://api.locu.com/v1_0/venue/%@/?api_key=bf748001618d2abadd62f21440b39f26cd89c515",
                                restaurant[@"id"]];
     
     NSURL *url = [[NSURL alloc] initWithString:requestString];
