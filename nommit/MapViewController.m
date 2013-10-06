@@ -59,15 +59,34 @@
     return self;
 }
 
-- (id)initWithMode:(NSInteger)mode
+- (id)initWithMode:(NSInteger)mode andOrderKey:(NSString *)orderKey
 {
     self = [self initWithNibName:nil bundle:nil];
     if (self) {
         self.mode = mode;
+        self.orderKey = orderKey;
         NSLog(@"Initiating mode: %d", mode);
-        
+        NSLog(@"Order key: %@", orderKey);
     }
+    
+    [self checkOrderStatus];
     return self;
+}
+
+- (void)checkOrderStatus
+{
+    Firebase *orderRef = [[Firebase alloc] initWithUrl:[@"https://nommit.firebaseio.com/orders/" stringByAppendingString:_orderKey]];
+    [orderRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        if (self.mode == 1 && [snapshot.value[@"status"] intValue] == 1) {
+            self.mode = 2;
+            [self refresh];
+            NSLog(@"Order accepted!"); // TODO: text customer
+        } else if (self.mode == 2 && [snapshot.value[@"status"] intValue] == 2) {
+            self.mode = 0;
+            [self refresh];
+            NSLog(@"Order complete!"); // TODO: pop up rate courier
+        }
+    }];
 }
 
 - (void)viewDidLoad
@@ -75,12 +94,19 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    [self refresh];
+}
+
+- (void)refresh
+{
     if (self.mode == 0) {
         [self initMode0Buttons];
     } else if (self.mode == 1) {
         [self initMode1Buttons];
     } else if (self.mode == 2) {
         [self initMode2Buttons];
+    } else if (self.mode == 3) {
+        [self initMode3Buttons];
     }
 }
 
@@ -100,12 +126,22 @@
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     UILabel *waitingLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, screenRect.size.height-60, screenRect.size.width-40, 44)];
     NSString *waitTime = [self estimatedWaitTime];
-    [waitingLabel setText:[@"   Delivery in progress.  ETA: " stringByAppendingString:waitTime]];
+    [waitingLabel setText:@"   Contacting couriers..."];
     [waitingLabel setBackgroundColor:[UIColor whiteColor]];
     [self.view addSubview:waitingLabel];
 }
 
 - (void)initMode2Buttons
+{
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    UILabel *waitingLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, screenRect.size.height-60, screenRect.size.width-40, 44)];
+    NSString *waitTime = [self estimatedWaitTime];
+    [waitingLabel setText:[@"   Delivery in progress.  ETA: " stringByAppendingString:waitTime]];
+    [waitingLabel setBackgroundColor:[UIColor whiteColor]];
+    [self.view addSubview:waitingLabel];
+}
+
+- (void)initMode3Buttons
 {
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
@@ -197,14 +233,21 @@
 
 - (void)didCompleteDelivery
 {
+    // Complete order
+    Firebase *orderRef = [[Firebase alloc] initWithUrl:[@"https://nommit.firebaseio.com/orders/" stringByAppendingString:_orderKey]];
+    [[orderRef childByAppendingPath:@"status"] setValue:@2];
+    
     // Send text to customer
+    // TODO: de-hardcode this url zomg
     NSString *urlAsString = [NSString stringWithFormat:@"http://twitterautomate.com/testapp/nommit_sms.php"];
     NSURL *url = [[NSURL alloc] initWithString:urlAsString];
     NSLog(@"Delivered food!");
     
+    // TODO: uialertview
+    
     // Reset mode
     self.mode = 0;
-    [self reloadInputViews];
+    [self refresh];
 }
 
 @end

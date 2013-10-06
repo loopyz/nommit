@@ -10,6 +10,7 @@
 
 @interface OrderConfirmViewController : UIViewController
 
+@property (nonatomic, strong) NSString *orderKey;
 @property (nonatomic, strong) UILabel *restaurantName;
 @property (nonatomic, strong) UILabel *restaurantLocation;
 @property (nonatomic, strong) UILabel *customerName;

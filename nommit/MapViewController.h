@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Firebase/Firebase.h>
 #import "CourierRegistrationViewController.h"
 #import "RatingViewController.h"
 #import "RequestViewController.h"
@@ -15,7 +16,8 @@
 @interface MapViewController : UIViewController
 
 @property (nonatomic, assign) NSInteger mode;
+@property (nonatomic, strong) NSString *orderKey;
 
-- (id)initWithMode:(NSInteger) mode;
+- (id)initWithMode:(NSInteger) mode andOrderKey:(NSString *)orderKey;
 
 @end
