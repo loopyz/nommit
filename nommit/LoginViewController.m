@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import <Firebase/Firebase.h>
 #import <FirebaseSimpleLogin/FirebaseSimpleLogin.h>
+#import "MapViewController.h"
 
 @interface LoginViewController ()
 
@@ -85,6 +86,10 @@
                          } else  {
                              // We have a logged in facebook user
                              NSLog(@"Good job!");
+                             
+                             MapViewController *mvc = [[MapViewController alloc] init];
+                             UINavigationController *mvcNavController = [[UINavigationController alloc] initWithRootViewController:mvc];
+                             [self.navigationController presentViewController:mvcNavController animated:YES completion:nil];
                          }
     }];
 }
