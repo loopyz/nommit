@@ -9,21 +9,27 @@
 #import "RequestViewController.h"
 #import <VenmoAppSwitch/Venmo.h>
 #import "MapViewController.h"
+#import "RequestView.h"
 
 @interface RequestViewController ()
 
+@property (nonatomic, strong) RequestView *reqView;
+
 @end
+
 
 @implementation RequestViewController {
     VenmoClient *_venmoClient;
     Firebase * _firebase;
 }
 
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        self.view = _reqView;
+        _reqView.delegate = self;
+        
         self.navigationItem.title = @"Request Food";
         // ADD: Search bar
         // TODO: Learn Yelp API
@@ -99,7 +105,12 @@
     
     Firebase* newOrderRef = [_firebase childByAutoId];
     [newOrderRef setValue:@{
-                            //@"customer" : @{@"name" : .text} // TODO!
+                            @"customer" : @{@"name" : _reqView.customer,
+                                            @"location": _reqView.customerLocation},
+                            @"restaurant" : @{@"name" : _reqView.restaurant,
+                                              @"location": _reqView.restaurantLocation},
+                            @"food" : _reqView.food,
+                            @"status" : @0
                             }];
 }
 

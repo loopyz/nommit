@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8D1F949718006EA2005A86A5 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8D1F949618006EA2005A86A5 /* GoogleMaps.bundle */; };
 		8D1F949E180074A6005A86A5 /* GlossyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1F949D180074A6005A86A5 /* GlossyButton.m */; };
-		8D1F94B418009EAD005A86A5 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D1F94B318009EAD005A86A5 /* GoogleMaps.framework */; };
-		8D1F94B618009EC7005A86A5 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D1F94B518009EC7005A86A5 /* FacebookSDK.framework */; };
 		8DEF3F791800B0FA005E2BDE /* RequestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEF3F781800B0FA005E2BDE /* RequestView.m */; };
 		8DFD66271800D3BF00E7C9ED /* VenmoAppSwitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFD66261800D3BF00E7C9ED /* VenmoAppSwitch.framework */; };
 		F370A44C18004EEC003B7DA8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370A44B18004EEC003B7DA8 /* CoreLocation.framework */; };
@@ -33,10 +30,11 @@
 		F3CA30BD1800E03E00914EA1 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3CA30BC1800E03E00914EA1 /* Firebase.framework */; };
 		F3CA30BF1800E07800914EA1 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F3CA30BE1800E07800914EA1 /* GoogleMaps.bundle */; };
 		F3CA30C11800E10500914EA1 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3CA30C01800E10500914EA1 /* GoogleMaps.framework */; };
+		F3CA32A91800EAC400914EA1 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3CA32A81800EAC400914EA1 /* AddressBook.framework */; };
+		F3CA32AB1800EAF600914EA1 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F3CA32AA1800EAF600914EA1 /* libicucore.dylib */; };
 		F3DF4A2217FA07DF000B51E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DF4A2117FA07DF000B51E4 /* UIKit.framework */; };
 		F3DF4A2417FA07DF000B51E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DF4A2317FA07DF000B51E4 /* Foundation.framework */; };
 		F3DF4A2617FA07DF000B51E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DF4A2517FA07DF000B51E4 /* CoreGraphics.framework */; };
-		F3DF4A2C17FA07DF000B51E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F3DF4A2A17FA07DF000B51E4 /* InfoPlist.strings */; };
 		F3DF4A2E17FA07DF000B51E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3DF4A2D17FA07DF000B51E4 /* main.m */; };
 		F3DF4A3217FA07DF000B51E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3DF4A3117FA07DF000B51E4 /* AppDelegate.m */; };
 		F3DF4A3417FA07DF000B51E4 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F3DF4A3317FA07DF000B51E4 /* Default.png */; };
@@ -67,8 +65,6 @@
 		8D1F949618006EA2005A86A5 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleMaps.bundle; sourceTree = "<group>"; };
 		8D1F949C1800742B005A86A5 /* GlossyButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlossyButton.h; sourceTree = "<group>"; };
 		8D1F949D180074A6005A86A5 /* GlossyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlossyButton.m; sourceTree = "<group>"; };
-		8D1F94B318009EAD005A86A5 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = ../GoogleMaps.framework; sourceTree = "<group>"; };
-		8D1F94B518009EC7005A86A5 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		8DEF3F771800B0FA005E2BDE /* RequestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestView.h; sourceTree = "<group>"; };
 		8DEF3F781800B0FA005E2BDE /* RequestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestView.m; sourceTree = "<group>"; };
 		8DFD66261800D3BF00E7C9ED /* VenmoAppSwitch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VenmoAppSwitch.framework; sourceTree = "<group>"; };
@@ -94,6 +90,8 @@
 		F3CA30BC1800E03E00914EA1 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
 		F3CA30BE1800E07800914EA1 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleMaps.bundle; sourceTree = "<group>"; };
 		F3CA30C01800E10500914EA1 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = "../../HackMIT/GoogleMaps-iOS-1.5.0/GoogleMaps.framework"; sourceTree = "<group>"; };
+		F3CA32A81800EAC400914EA1 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		F3CA32AA1800EAF600914EA1 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		F3DF4A1E17FA07DF000B51E4 /* nommit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nommit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3DF4A2117FA07DF000B51E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F3DF4A2317FA07DF000B51E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -128,8 +126,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D1F94B618009EC7005A86A5 /* FacebookSDK.framework in Frameworks */,
-				8D1F94B418009EAD005A86A5 /* GoogleMaps.framework in Frameworks */,
+				F3CA32AB1800EAF600914EA1 /* libicucore.dylib in Frameworks */,
+				F3CA32A91800EAC400914EA1 /* AddressBook.framework in Frameworks */,
 				F370A46A18005766003B7DA8 /* StoreKit.framework in Frameworks */,
 				F370A46618005204003B7DA8 /* MobileCoreServices.framework in Frameworks */,
 				F370A464180051C8003B7DA8 /* SystemConfiguration.framework in Frameworks */,
@@ -189,11 +187,11 @@
 		F3DF4A2017FA07DF000B51E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F3CA32AA1800EAF600914EA1 /* libicucore.dylib */,
+				F3CA32A81800EAC400914EA1 /* AddressBook.framework */,
 				F3CA30C01800E10500914EA1 /* GoogleMaps.framework */,
 				F3CA30BC1800E03E00914EA1 /* Firebase.framework */,
 				8DFD66261800D3BF00E7C9ED /* VenmoAppSwitch.framework */,
-				8D1F94B518009EC7005A86A5 /* FacebookSDK.framework */,
-				8D1F94B318009EAD005A86A5 /* GoogleMaps.framework */,
 				F3CA30BE1800E07800914EA1 /* GoogleMaps.bundle */,
 				F370A46918005766003B7DA8 /* StoreKit.framework */,
 				F370A46518005204003B7DA8 /* MobileCoreServices.framework */,
@@ -387,11 +385,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3DF4A2C17FA07DF000B51E4 /* InfoPlist.strings in Resources */,
 				F3DF4A3417FA07DF000B51E4 /* Default.png in Resources */,
 				F3DF4A3617FA07DF000B51E4 /* Default@2x.png in Resources */,
 				F3CA30BF1800E07800914EA1 /* GoogleMaps.bundle in Resources */,
-				8D1F949718006EA2005A86A5 /* GoogleMaps.bundle in Resources */,
 				F3DF4A3817FA07DF000B51E4 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,6 +545,7 @@
 					/Users/Lucy/Documents/hackathons/nommit,
 					/Users/gregory/Documents/nommit,
 					"/Users/gregory/HackMIT/GoogleMaps-iOS-1.5.0",
+					/Users/gregory/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "nommit/nommit-Prefix.pch";
@@ -577,6 +574,7 @@
 					/Users/Lucy/Documents/hackathons/nommit,
 					/Users/gregory/Documents/nommit,
 					"/Users/gregory/HackMIT/GoogleMaps-iOS-1.5.0",
+					/Users/gregory/Documents/FacebookSDK,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "nommit/nommit-Prefix.pch";

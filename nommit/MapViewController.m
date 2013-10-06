@@ -71,13 +71,13 @@
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
     
-    CGRect rect = CGRectMake(10,screenHeight-100,screenWidth-20,44);
+    CGRect rect = CGRectMake(10,screenHeight-50,screenWidth-20,44);
     UIColor *buttonColor = [[UIColor alloc] initWithRed:174.0/255 green:134.0/255 blue:191.0/255 alpha:1];
     GlossyButton *glossyBtn = [[GlossyButton alloc] initWithFrame:rect withBackgroundColor:buttonColor];
     [glossyBtn setTitle:@"Request Food" forState:UIControlStateNormal];
     [glossyBtn addTarget:self action:@selector(openRequestView) forControlEvents:UIControlEventTouchUpInside];
 
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, screenHeight - 155, screenWidth-20, 44)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, screenHeight - 100, screenWidth-20, 44)];
     [label setText:@"  Address"];
     [label setBackgroundColor:[UIColor whiteColor]];
     //[label setShadowColor:[UIColor blackColor]];
@@ -103,14 +103,14 @@
     NSURL *url = [[NSURL alloc] initWithString:urlAsString];
     NSLog(@"%@", urlAsString);
     
-    [NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:url] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+    /*[NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:url] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         
         if (error) {
             [self.delegate fetchingGroupsFailedWithError:error];
         } else {
             [self.delegate receivedGroupsJSON:data];
         }
-    }];
+    }];*/
     
     UIBarButtonItem *courierRequestButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(openCourierView)];
     self.navigationItem.leftBarButtonItem = courierRequestButton;
