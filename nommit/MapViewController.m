@@ -39,7 +39,8 @@
                                                                  zoom:14];
     mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     
-    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(42.358867, -71.093825);
+    
+    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(42.358328, -71.096507);
     GMSMarker *marker2 = [GMSMarker markerWithPosition:position];
     marker2.title = @"Courier Location";
     marker2.map = mapView_;
@@ -226,7 +227,7 @@
     [textField setFont:[UIFont boldSystemFontOfSize:12]];
     
     //Placeholder text is displayed when no text is typed
-    textField.placeholder = @"Address";
+    textField.placeholder = @"      MIT ....... 1 courier available";
     
     
     //It set when the left prefixLabel to be displayed
