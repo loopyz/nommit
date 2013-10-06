@@ -140,8 +140,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSMutableDictionary *order = orders[[orderKeys objectAtIndex:indexPath.row]];
-    CourierConfirmViewController *ccvc = [[CourierConfirmViewController alloc] initWithOrder:order];
+    NSString* orderKey = [orderKeys objectAtIndex:indexPath.row];
+    NSMutableDictionary *order = orders[orderKey];
+    CourierConfirmViewController *ccvc = [[CourierConfirmViewController alloc] initWithOrder:order andKey:orderKey];
     UINavigationController *ccvcNavController = [[UINavigationController alloc] initWithRootViewController:ccvc];
     [self presentViewController:ccvcNavController animated:YES completion:nil];
 }

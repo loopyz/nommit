@@ -26,10 +26,11 @@
     return self;
 }
 
-- (id)initWithOrder:(NSDictionary *)order
+- (id)initWithOrder:(NSDictionary *)order andKey:(NSString *)orderKey
 {
     self = [self initWithNibName:nil bundle:nil];
     self.order = order;
+    self.orderKey = orderKey;
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
@@ -85,8 +86,19 @@
 
 - (void)courierDidConfirm
 {
-    NSLog(@"Courier hit confirm button");
-    //Try to confirm the order. If order not already confirmed, take order
+    //Try to confirm the order (ensure order still exists and is still open)
+    Firebase *orderRef = [[Firebase alloc] initWithUrl:[@"https://nommit.firebaseio.com/orders/" stringByAppendingString:orderKey]];
+    [orderRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+
+        if (snapshot.value == [NSNull null] || snapshot.value[@"status"] == 1) {
+            NSLog(@"Order already filled or cancelled!");
+            self.courierDidCancel();
+        } else {
+            NSLog(@"Order confirmed!")
+            [orderRef setValue:@{@"status" : @1})]
+            // Return to MapView
+        }
+    }];
 }
 
 - (void)courierDidCancel
