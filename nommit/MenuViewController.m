@@ -7,6 +7,7 @@
 //
 
 #import "MenuViewController.h"
+#import "OrderConfirmViewController.h"
 
 @interface MenuViewController ()
 
@@ -15,22 +16,24 @@
 @implementation MenuViewController
 {
     NSArray* _menu;
+    NSDictionary* _restaurant;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
 
--(id)initWithMenuItems:(NSArray*)menuItems
+- (id)initWithMenuItems:(NSArray*)menuItems andRestaurant:(NSDictionary*)restaurant
 {
     self = [super init];
-    if (self){
+    if (self) {
         _menu = menuItems;
+        _restaurant = restaurant;
+        self.navigationItem.title = @"Menu";
     }
     return self;
 }
@@ -44,6 +47,9 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissMenu)];
+    self.navigationItem.leftBarButtonItem = backButton;
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,14 +64,13 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
+    //TODO: Figure out sections
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    //TODO: Figure out sections
     return [_menu count];
 }
 
@@ -95,9 +100,15 @@
     NSLog(@"We selected something from the menu!");
     NSDictionary* menu = [_menu objectAtIndex:indexPath.row];
     
-    //CourierConfirmViewController *ccvc = [[CourierConfirmViewController alloc] initWithOrder:order];
-    //UINavigationController *ccvcNavController = [[UINavigationController alloc] initWithRootViewController:ccvc];
-    //[self presentViewController:ccvcNavController animated:YES completion:nil];
+    OrderConfirmViewController *ocvc = [[OrderConfirmViewController alloc] initWithMenu:menu
+                                                                          andRestaurant:_restaurant];
+    UINavigationController *ocvcNavController = [[UINavigationController alloc] initWithRootViewController:ocvc];
+    [self presentViewController:ocvcNavController animated:YES completion:nil];
+}
+
+- (void)dismissMenu
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*

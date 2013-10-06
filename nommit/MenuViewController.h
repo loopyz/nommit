@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MenuViewController : UITableViewController
-- (id)initWithMenuItems:(NSArray*)menuItems;
+- (id)initWithMenuItems:(NSArray*)menuItems andRestaurant:(NSDictionary*)restaurant;
 @end

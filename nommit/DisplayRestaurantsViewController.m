@@ -8,7 +8,7 @@
 
 #import "DisplayRestaurantsViewController.h"
 #import "MenuViewController.h"
-
+#import "MapViewController.h"
 
 @interface DisplayRestaurantsViewController ()
 
@@ -33,6 +33,7 @@
     self = [super init];
     if (self){
         _restaurants = restaurants;
+        self.navigationItem.title = @"Restaurants";
     }
     return self;
 }
@@ -46,6 +47,9 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissMenu)];
+    self.navigationItem.leftBarButtonItem = backButton;
 }
 
 - (void)didReceiveMemoryWarning
@@ -142,14 +146,22 @@
             
             // ADD: time estimating function
             
-            MenuViewController *menuView = [[MenuViewController alloc] initWithMenuItems:menuItems];
-            [self presentViewController:menuView animated:YES completion:nil];
+            MenuViewController *menuView = [[MenuViewController alloc] initWithMenuItems:menuItems andRestaurant:restaurant];
+            UINavigationController *menuViewNavController = [[UINavigationController alloc] initWithRootViewController:menuView];
+            [self presentViewController:menuViewNavController animated:YES completion:nil];
         }
     }];
 
     //MenuViewController *ccvc = [[MenuViewController alloc] initWithMenu:menu];
     //UINavigationController *ccvcNavController = [[UINavigationController alloc] initWithRootViewController:ccvc];
     //[self presentViewController:ccvcNavController animated:YES completion:nil];
+}
+
+- (void)dismissMenu
+{
+    MapViewController *mvc = [[MapViewController alloc] init];
+    UINavigationController *mvcNavController = [[UINavigationController alloc] initWithRootViewController:mvc];
+    [self presentViewController:mvcNavController animated:YES completion:nil];
 }
 
 /*

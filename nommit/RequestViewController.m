@@ -32,18 +32,9 @@
         self.view = _reqView;
         _reqView.delegate = self;
         
-        self.navigationItem.title = @"Request Food";
-        // ADD: Search bar
-        // TODO: Learn Yelp API
-        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(makeRequest)];
-        self.navigationItem.rightBarButtonItem = doneButton;
-        
-        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissRequest)];
-        self.navigationItem.leftBarButtonItem = backButton;
-        
+        self.navigationItem.title = @"Loading Restaurants...";
         self.view.backgroundColor = [UIColor whiteColor];
         
-        _firebase = [[Firebase alloc] initWithUrl:@"https://nommit.firebaseio.com/"];
         
         [locationManager startUpdatingLocation];
     }
@@ -63,6 +54,9 @@
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismissRequest)];
+    self.navigationItem.leftBarButtonItem = backButton;
 }
 
 #pragma mark - CLLocationManagerDelegate
@@ -107,7 +101,8 @@
                 // ADD: time estimating function
                 
                 DisplayRestaurantsViewController *restaurantView = [[DisplayRestaurantsViewController alloc] initWithRestaurants:restaurants];
-                [self presentViewController:restaurantView animated:YES completion:nil];
+                UINavigationController *restaurantViewNavController = [[UINavigationController alloc] initWithRootViewController:restaurantView];
+                [self presentViewController:restaurantViewNavController animated:YES completion:nil];
             }
         }];
     }
@@ -124,22 +119,6 @@
     MapViewController *mvc = [[MapViewController alloc] init];
     UINavigationController *mvcNavController = [[UINavigationController alloc] initWithRootViewController:mvc];
     [self.navigationController presentViewController:mvcNavController animated:YES completion:nil];
-}
-
-- (void)makeRequest
-{
-    // Make the food request! MOVE TO CourierConfirmViewController (courier charges customer)
-    //DO something
-    // TEST after UI implemented for choosing restaurants!
-    /* Firebase* newOrderRef = [_firebase childByAutoId];
-    [newOrderRef setValue:@{
-                            @"customer" : @{@"name" : _reqView.customer,
-                                            @"location": _reqView.customerLocation},
-                            @"restaurant" : @{@"name" : _reqView.restaurant,
-                                              @"location": _reqView.restaurantLocation},
-                            @"food" : _reqView.food,
-                            @"status" : @0
-                            }]; */
 }
 
 

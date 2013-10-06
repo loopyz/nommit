@@ -40,6 +40,10 @@
 		F3CA32AE1800F37000914EA1 /* CourierConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3CA32AD1800F37000914EA1 /* CourierConfirmViewController.m */; };
 		F3CA32B01800FCB700914EA1 /* VenmoAppSwitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3CA32AF1800FCB600914EA1 /* VenmoAppSwitch.framework */; };
 		F3CA32B21800FCD500914EA1 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3CA32B11800FCD500914EA1 /* GoogleMaps.framework */; };
+		F3CA32B71801358700914EA1 /* OrderConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3CA32B61801358700914EA1 /* OrderConfirmViewController.m */; };
+		F3CA32BB18014A7700914EA1 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F3CA32B918014A7700914EA1 /* icon@2x.png */; };
+		F3CA32BD18014B4800914EA1 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F3CA32BC18014B4800914EA1 /* icon.png */; };
+		F3CA32BF18014B4E00914EA1 /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = F3CA32BE18014B4E00914EA1 /* icon2.png */; };
 		F3DF4A2217FA07DF000B51E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DF4A2117FA07DF000B51E4 /* UIKit.framework */; };
 		F3DF4A2417FA07DF000B51E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DF4A2317FA07DF000B51E4 /* Foundation.framework */; };
 		F3DF4A2617FA07DF000B51E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DF4A2517FA07DF000B51E4 /* CoreGraphics.framework */; };
@@ -111,6 +115,11 @@
 		F3CA32AF1800FCB600914EA1 /* VenmoAppSwitch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VenmoAppSwitch.framework; path = "../../dev/app-switch-ios-framework-master/VenmoAppSwitch.framework"; sourceTree = "<group>"; };
 		F3CA32B11800FCD500914EA1 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = "../../dev/GoogleMaps-iOS-1.5.0/GoogleMaps.framework"; sourceTree = "<group>"; };
 		F3CA32B31800FCF600914EA1 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = "../../dev/GoogleMaps-iOS-1.5.0/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle"; sourceTree = "<group>"; };
+		F3CA32B51801358700914EA1 /* OrderConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderConfirmViewController.h; sourceTree = "<group>"; };
+		F3CA32B61801358700914EA1 /* OrderConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderConfirmViewController.m; sourceTree = "<group>"; };
+		F3CA32B918014A7700914EA1 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		F3CA32BC18014B4800914EA1 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		F3CA32BE18014B4E00914EA1 /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.png; sourceTree = "<group>"; };
 		F3DF4A1E17FA07DF000B51E4 /* nommit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nommit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3DF4A2117FA07DF000B51E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F3DF4A2317FA07DF000B51E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -251,6 +260,8 @@
 			isa = PBXGroup;
 			children = (
 				F3DF4A3017FA07DF000B51E4 /* AppDelegate.h */,
+				F3CA32B51801358700914EA1 /* OrderConfirmViewController.h */,
+				F3CA32B61801358700914EA1 /* OrderConfirmViewController.m */,
 				F3DF4A3117FA07DF000B51E4 /* AppDelegate.m */,
 				F3CA32AC1800F37000914EA1 /* CourierConfirmViewController.h */,
 				F3CA32AD1800F37000914EA1 /* CourierConfirmViewController.m */,
@@ -282,6 +293,9 @@
 		F3DF4A2817FA07DF000B51E4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F3CA32B918014A7700914EA1 /* icon@2x.png */,
+				F3CA32BC18014B4800914EA1 /* icon.png */,
+				F3CA32BE18014B4E00914EA1 /* icon2.png */,
 				F3DF4A2917FA07DF000B51E4 /* nommit-Info.plist */,
 				F3DF4A2A17FA07DF000B51E4 /* InfoPlist.strings */,
 				F3DF4A2D17FA07DF000B51E4 /* main.m */,
@@ -423,8 +437,11 @@
 			files = (
 				F3DF4A3417FA07DF000B51E4 /* Default.png in Resources */,
 				F3DF4A3617FA07DF000B51E4 /* Default@2x.png in Resources */,
+				F3CA32BD18014B4800914EA1 /* icon.png in Resources */,
 				F3CA30BF1800E07800914EA1 /* GoogleMaps.bundle in Resources */,
 				F3DF4A3817FA07DF000B51E4 /* Default-568h@2x.png in Resources */,
+				F3CA32BF18014B4E00914EA1 /* icon2.png in Resources */,
+				F3CA32BB18014A7700914EA1 /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +481,7 @@
 				8DBAFAA91801319C004875CC /* LoginViewController.m in Sources */,
 				F3DF4A5B17FA093F000B51E4 /* MapViewController.m in Sources */,
 				F3DF4A5E17FA0A62000B51E4 /* RatingViewController.m in Sources */,
+				F3CA32B71801358700914EA1 /* OrderConfirmViewController.m in Sources */,
 				8DEF3F791800B0FA005E2BDE /* RequestView.m in Sources */,
 				F3CA32AE1800F37000914EA1 /* CourierConfirmViewController.m in Sources */,
 				F3DF4A6117FA0A82000B51E4 /* RequestViewController.m in Sources */,
