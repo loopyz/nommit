@@ -9,7 +9,7 @@
 #import "MapViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import "GlossyButton.h"
-
+#import "TipViewController.h"
 
 @interface MapViewController ()
 
@@ -67,6 +67,7 @@
     return self;
 }
 
+
 - (id)initWithMode:(NSInteger)mode andOrderKey:(NSString *)orderKey
 {
     self = [self initWithNibName:nil bundle:nil];
@@ -93,6 +94,17 @@
             self.mode = 0;
             [self refresh];
             NSLog(@"Order complete!"); // TODO: pop up rate courier
+            
+            /*TipViewController *tvc = [[TipViewController alloc] initWithCompletedOrder:self.orderKey];
+            UINavigationController *tvcNavController = [[UINavigationController alloc] initWithRootViewController:tvc];
+            [self presentViewController:tvcNavController animated:YES completion:nil];*/
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Order Complete"
+                                                           message:@"Your order has been completed! Don't forget to leave a tip. :)"
+                                                          delegate:self
+                                                 cancelButtonTitle:@"Dismiss"
+                                                 otherButtonTitles:nil];
+            [alert show];
         }
     }];
 }
@@ -115,9 +127,6 @@
     if (_glossyBtn != nil) {
         [_glossyBtn removeFromSuperview];
     }
-    /*NSLog(@"%@", [self.view subviews]);
-    [[self.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    [self loadView];*/
     
     if (self.mode == 0) {
         [self initMode0Buttons];

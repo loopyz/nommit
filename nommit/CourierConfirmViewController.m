@@ -154,7 +154,7 @@
     
     VenmoTransaction *venmoTransaction = [[VenmoTransaction alloc] init];
     venmoTransaction.type = VenmoTransactionTypeCharge;
-    NSString *price_raw = @"0.01"; //[self.order[@"price"] substringFromIndex: 1];
+    NSString *price_raw = [self.order[@"price"] substringFromIndex: 1];
     venmoTransaction.amount = [NSDecimalNumber decimalNumberWithString:price_raw];
     venmoTransaction.note = [@"Nommit order: " stringByAppendingString:self.food.text];
     // TODO: remove hardcoded recipient

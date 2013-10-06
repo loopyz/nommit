@@ -53,6 +53,7 @@
 		F3CA32C71801604C00914EA1 /* courier@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F3CA32C51801604C00914EA1 /* courier@2x.png */; };
 		F3CA32C91801628F00914EA1 /* nommit.png in Resources */ = {isa = PBXBuildFile; fileRef = F3CA32C81801628F00914EA1 /* nommit.png */; };
 		F3CA32CB1801782900914EA1 /* ttt.gpx in Resources */ = {isa = PBXBuildFile; fileRef = F3CA32CA1801782900914EA1 /* ttt.gpx */; };
+		F3CA32CE1801892500914EA1 /* TipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3CA32CD1801892500914EA1 /* TipViewController.m */; };
 		F3DF4A2217FA07DF000B51E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DF4A2117FA07DF000B51E4 /* UIKit.framework */; };
 		F3DF4A2417FA07DF000B51E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DF4A2317FA07DF000B51E4 /* Foundation.framework */; };
 		F3DF4A2617FA07DF000B51E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DF4A2517FA07DF000B51E4 /* CoreGraphics.framework */; };
@@ -139,6 +140,8 @@
 		F3CA32C51801604C00914EA1 /* courier@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "courier@2x.png"; sourceTree = "<group>"; };
 		F3CA32C81801628F00914EA1 /* nommit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nommit.png; sourceTree = "<group>"; };
 		F3CA32CA1801782900914EA1 /* ttt.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ttt.gpx; sourceTree = "<group>"; };
+		F3CA32CC1801892500914EA1 /* TipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipViewController.h; sourceTree = "<group>"; };
+		F3CA32CD1801892500914EA1 /* TipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipViewController.m; sourceTree = "<group>"; };
 		F3DF4A1E17FA07DF000B51E4 /* nommit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nommit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3DF4A2117FA07DF000B51E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F3DF4A2317FA07DF000B51E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -305,6 +308,8 @@
 				F3DF4A5D17FA0A62000B51E4 /* RatingViewController.m */,
 				8DEF3F771800B0FA005E2BDE /* RequestView.h */,
 				8DEF3F781800B0FA005E2BDE /* RequestView.m */,
+				F3CA32CC1801892500914EA1 /* TipViewController.h */,
+				F3CA32CD1801892500914EA1 /* TipViewController.m */,
 				F3DF4A5F17FA0A82000B51E4 /* RequestViewController.h */,
 				F3DF4A6017FA0A82000B51E4 /* RequestViewController.m */,
 				8DFD66381801139100E7C9ED /* MenuViewController.h */,
@@ -523,6 +528,7 @@
 				F3CA32AE1800F37000914EA1 /* CourierConfirmViewController.m in Sources */,
 				F3DF4A6117FA0A82000B51E4 /* RequestViewController.m in Sources */,
 				8DFD663A1801139100E7C9ED /* MenuViewController.m in Sources */,
+				F3CA32CE1801892500914EA1 /* TipViewController.m in Sources */,
 				8D1F949E180074A6005A86A5 /* GlossyButton.m in Sources */,
 				F3CA30BB1800E01400914EA1 /* CourierViewController.m in Sources */,
 				8DFD66371801011000E7C9ED /* DisplayRestaurantsViewController.m in Sources */,
