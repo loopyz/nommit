@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8D1F949E180074A6005A86A5 /* GlossyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1F949D180074A6005A86A5 /* GlossyButton.m */; };
 		8D50985118015A5400A7E4B7 /* Geocoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D50985018015A5400A7E4B7 /* Geocoding.m */; };
+		8D50985418016DBB00A7E4B7 /* button_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D50985218016DBB00A7E4B7 /* button_pressed.png */; };
+		8D50985518016DBB00A7E4B7 /* button_unpressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D50985318016DBB00A7E4B7 /* button_unpressed.png */; };
 		8DBAFAA218012ED0004875CC /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DBAFAA118012ED0004875CC /* Social.framework */; };
 		8DBAFAA418012ED7004875CC /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DBAFAA318012ED7004875CC /* Accounts.framework */; };
 		8DBAFAA618012F37004875CC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DBAFAA518012F37004875CC /* FacebookSDK.framework */; };
@@ -84,6 +86,8 @@
 		8D1F949D180074A6005A86A5 /* GlossyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlossyButton.m; sourceTree = "<group>"; };
 		8D50984F18015A5400A7E4B7 /* Geocoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Geocoding.h; sourceTree = "<group>"; };
 		8D50985018015A5400A7E4B7 /* Geocoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Geocoding.m; sourceTree = "<group>"; };
+		8D50985218016DBB00A7E4B7 /* button_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_pressed.png; sourceTree = "<group>"; };
+		8D50985318016DBB00A7E4B7 /* button_unpressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_unpressed.png; sourceTree = "<group>"; };
 		8DBAFAA118012ED0004875CC /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		8DBAFAA318012ED7004875CC /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		8DBAFAA518012F37004875CC /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
@@ -312,6 +316,8 @@
 		F3DF4A2817FA07DF000B51E4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8D50985218016DBB00A7E4B7 /* button_pressed.png */,
+				8D50985318016DBB00A7E4B7 /* button_unpressed.png */,
 				F3CA32C81801628F00914EA1 /* nommit.png */,
 				F3CA32C41801604C00914EA1 /* courier.png */,
 				F3CA32C51801604C00914EA1 /* courier@2x.png */,
@@ -464,9 +470,11 @@
 				F3CA32C71801604C00914EA1 /* courier@2x.png in Resources */,
 				F3DF4A3817FA07DF000B51E4 /* Default-568h@2x.png in Resources */,
 				F3CA32BF18014B4E00914EA1 /* icon2.png in Resources */,
+				8D50985518016DBB00A7E4B7 /* button_unpressed.png in Resources */,
 				F3CA32C91801628F00914EA1 /* nommit.png in Resources */,
 				F3CA32BB18014A7700914EA1 /* icon@2x.png in Resources */,
 				F3CA32C61801604C00914EA1 /* courier.png in Resources */,
+				8D50985418016DBB00A7E4B7 /* button_pressed.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

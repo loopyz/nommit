@@ -20,6 +20,7 @@
 @property (nonatomic, assign) NSInteger mode;
 
 @property (strong, nonatomic) IBOutlet UITextField *myTextField;
+@property (nonatomic, strong) UITextField *textField;
 
 
 

@@ -134,13 +134,23 @@
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
     
-    CGRect rect = CGRectMake(10,screenHeight-50,screenWidth-20,44);
+    CGRect rect = CGRectMake(10,screenHeight-47,screenWidth-76,40);
     UIColor *buttonColor = [[UIColor alloc] initWithRed:174.0/255 green:134.0/255 blue:191.0/255 alpha:1];
     GlossyButton *glossyBtn = [[GlossyButton alloc] initWithFrame:rect withBackgroundColor:buttonColor];
     [glossyBtn setTitle:@"Request Food" forState:UIControlStateNormal];
     [glossyBtn addTarget:self action:@selector(openRequestView) forControlEvents:UIControlEventTouchUpInside];
 
+    /*UIImage *normal = [UIImage imageNamed:@"button_unpressed"];
+    UIImage *pressed = [UIImage imageNamed:@"button_pressed"];
     
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = rect;
+    [button addTarget:self action:@selector(openRequestView) forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:pressed forState:UIControlStateSelected];
+    [button setImage:normal forState:UIControlStateNormal];
+    [button setTitle:@"Request Food" forState:UIControlStateNormal];
+    
+    [self.view addSubview:button]; */
     
     UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(10, screenHeight - 100, screenWidth-20, 44)];
     
@@ -156,6 +166,10 @@
     
     //It set when the left prefixLabel to be displayed
     textField.leftViewMode = UITextFieldViewModeAlways;
+    
+    textField.autocorrectionType = UITextAutocorrectionTypeYes;
+    textField.keyboardType = UIKeyboardTypeDefault;
+    textField.clearButtonMode = UITextFieldViewModeWhileEditing;
     
     // Adds the textField to the view.
     [self.view setUserInteractionEnabled:YES];
@@ -173,7 +187,10 @@
     //[self.view addSubview:label];
     
     
+    
 }
+
+
 
 // pragma mark is used for easy access of code in Xcode
 #pragma mark - TextField Delegates
