@@ -14,6 +14,7 @@
 @property (nonatomic, strong) UILabel *customer;
 @property (nonatomic, strong) CLLocation *customerLocation;
 @property (nonatomic, strong) UILabel *restaurant;
+
 @property (nonatomic, strong) CLLocation *restaurantLocation;
 @property (nonatomic, strong) UITextField *food;
 @property (nonatomic, strong) UITextField *restaurantSearchText;

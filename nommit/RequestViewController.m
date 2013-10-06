@@ -104,7 +104,7 @@
     }
     
     // TEST after UI implemented for choosing restaurants!
-    Firebase* newOrderRef = [_firebase childByAutoId];
+    /* Firebase* newOrderRef = [_firebase childByAutoId];
     [newOrderRef setValue:@{
                             @"customer" : @{@"name" : _reqView.customer,
                                             @"location": _reqView.customerLocation},
@@ -112,7 +112,7 @@
                                               @"location": _reqView.restaurantLocation},
                             @"food" : _reqView.food,
                             @"status" : @0
-                            }];
+                            }]; */
 }
 
 
