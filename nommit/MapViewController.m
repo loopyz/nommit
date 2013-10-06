@@ -17,6 +17,9 @@
 
 @implementation MapViewController {
     GMSMapView *mapView_;
+    
+    GlossyButton *_glossyBtn;
+    UILabel *_uiLabel;
 }
 @synthesize gs;
 
@@ -106,6 +109,16 @@
 
 - (void)refresh
 {
+    if (_uiLabel != nil) {
+        [_uiLabel removeFromSuperview];
+    }
+    if (_glossyBtn != nil) {
+        [_glossyBtn removeFromSuperview];
+    }
+    /*NSLog(@"%@", [self.view subviews]);
+    [[self.view subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [self loadView];*/
+    
     if (self.mode == 0) {
         [self initMode0Buttons];
     } else if (self.mode == 1) {
@@ -132,21 +145,20 @@
 - (void)initMode1Buttons
 {
     CGRect screenRect = [[UIScreen mainScreen] bounds];
-    UILabel *waitingLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, screenRect.size.height-60, screenRect.size.width-40, 44)];
-    NSString *waitTime = [self estimatedWaitTime];
-    [waitingLabel setText:@"   Contacting couriers..."];
-    [waitingLabel setBackgroundColor:[UIColor whiteColor]];
-    [self.view addSubview:waitingLabel];
+    _uiLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, screenRect.size.height-50, screenRect.size.width-76, 44)];
+    [_uiLabel setText:@"   Contacting couriers..."];
+    [_uiLabel setBackgroundColor:[UIColor whiteColor]];
+    [self.view addSubview:_uiLabel];
 }
 
 - (void)initMode2Buttons
 {
     CGRect screenRect = [[UIScreen mainScreen] bounds];
-    UILabel *waitingLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, screenRect.size.height-60, screenRect.size.width-40, 44)];
+    _uiLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, screenRect.size.height-50, screenRect.size.width-76, 44)];
     NSString *waitTime = [self estimatedWaitTime];
-    [waitingLabel setText:[@"   Delivery in progress.  ETA: " stringByAppendingString:waitTime]];
-    [waitingLabel setBackgroundColor:[UIColor whiteColor]];
-    [self.view addSubview:waitingLabel];
+    [_uiLabel setText:[@"  Delivery in progress. ETA: " stringByAppendingString:waitTime]];
+    [_uiLabel setBackgroundColor:[UIColor whiteColor]];
+    [self.view addSubview:_uiLabel];
 }
 
 - (void)initMode3Buttons
@@ -155,12 +167,12 @@
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
     
-    CGRect rect = CGRectMake(10,screenHeight-50,screenWidth-20,44);
+    CGRect rect = CGRectMake(10,screenHeight-50,screenWidth-76,44);
     UIColor *buttonColor = [[UIColor alloc] initWithRed:174.0/255 green:134.0/255 blue:191.0/255 alpha:1];
-    GlossyButton *glossyBtn = [[GlossyButton alloc] initWithFrame:rect withBackgroundColor:buttonColor];
-    [glossyBtn setTitle:@"Complete Delivery" forState:UIControlStateNormal];
-    [glossyBtn addTarget:self action:@selector(didCompleteDelivery) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:glossyBtn];
+    _glossyBtn = [[GlossyButton alloc] initWithFrame:rect withBackgroundColor:buttonColor];
+    [_glossyBtn setTitle:@"Complete Delivery" forState:UIControlStateNormal];
+    [_glossyBtn addTarget:self action:@selector(didCompleteDelivery) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_glossyBtn];
 }
 
 - (void)initMode0Buttons
@@ -174,9 +186,9 @@
     
     CGRect rect = CGRectMake(10,screenHeight-47,screenWidth-76,40);
     UIColor *buttonColor = [[UIColor alloc] initWithRed:174.0/255 green:134.0/255 blue:191.0/255 alpha:1];
-    GlossyButton *glossyBtn = [[GlossyButton alloc] initWithFrame:rect withBackgroundColor:buttonColor];
-    [glossyBtn setTitle:@"Request Food" forState:UIControlStateNormal];
-    [glossyBtn addTarget:self action:@selector(openRequestView) forControlEvents:UIControlEventTouchUpInside];
+    _glossyBtn = [[GlossyButton alloc] initWithFrame:rect withBackgroundColor:buttonColor];
+    [_glossyBtn setTitle:@"Request Food" forState:UIControlStateNormal];
+    [_glossyBtn addTarget:self action:@selector(openRequestView) forControlEvents:UIControlEventTouchUpInside];
 
     /*UIImage *normal = [UIImage imageNamed:@"button_unpressed"];
     UIImage *pressed = [UIImage imageNamed:@"button_pressed"];
@@ -221,7 +233,7 @@
     //[label setShadowColor:[UIColor blackColor]];
     
     //set selector or callback as openRequestView for UITouchUpInside
-    [self.view addSubview:glossyBtn];
+    [self.view addSubview:_glossyBtn];
     //[self.view addSubview:label];
     
     
@@ -305,8 +317,6 @@
 
 - (void)didCompleteDelivery
 {
-    // TODO: test this
-    
     // Complete order
     Firebase *orderRef = [[Firebase alloc] initWithUrl:[@"https://nommit.firebaseio.com/orders/" stringByAppendingString:_orderKey]];
     [[orderRef childByAppendingPath:@"status"] setValue:@2];
