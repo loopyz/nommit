@@ -19,7 +19,6 @@
 
 
 @implementation RequestViewController {
-    VenmoClient *_venmoClient;
     Firebase * _firebase;
 }
 
@@ -112,21 +111,7 @@
 - (void)makeRequest
 {
     // Make the food request! MOVE TO CourierConfirmViewController (courier charges customer)
-    // Venmo
-    _venmoClient = [VenmoClient clientWithAppId:@"1422" secret:@"s5z3FenAVb7YYFPNbNKcHfeby6ACZMrV"];
-    
-    VenmoTransaction *venmoTransaction = [[VenmoTransaction alloc] init];
-    venmoTransaction.type = VenmoTransactionTypePay;
-    venmoTransaction.amount = [NSDecimalNumber decimalNumberWithString:@"0.05"];
-    venmoTransaction.note = @"hello world";
-    venmoTransaction.toUserHandle = @"matthewhamilton";
-    
-    VenmoViewController *venmoViewController = [_venmoClient viewControllerWithTransaction:
-                                                venmoTransaction];
-    if (venmoViewController) {
-        [self presentModalViewController:venmoViewController animated:YES];
-    }
-    
+    //DO something
     // TEST after UI implemented for choosing restaurants!
     /* Firebase* newOrderRef = [_firebase childByAutoId];
     [newOrderRef setValue:@{
@@ -139,30 +124,5 @@
                             }]; */
 }
 
-
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    NSLog(@"openURL: %@", url);
-    return [_venmoClient openURL:url completionHandler:^(VenmoTransaction *transaction, NSError *error) {
-        if (transaction) {
-            NSString *success = (transaction.success ? @"Success" : @"Failure");
-            NSString *title = [@"Transaction " stringByAppendingString:success];
-            NSString *message = [@"payment_id: " stringByAppendingFormat:@"%@. %@ %@ %@ (%@) $%@ %@",
-                                 transaction.transactionID,
-                                 transaction.fromUserID,
-                                 transaction.typeStringPast,
-                                 transaction.toUserHandle,
-                                 transaction.toUserID,
-                                 transaction.amountString,
-                                 transaction.note];
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message
-                                                               delegate:nil cancelButtonTitle:@"OK"
-                                                      otherButtonTitles:nil];
-            [alertView show];
-        } else { // error
-            NSLog(@"transaction error code: %i", error.code);
-        }
-    }];
-}
 
 @end

@@ -9,12 +9,15 @@
 #import "CourierConfirmViewController.h"
 #import "GlossyButton.h"
 #import <Firebase/Firebase.h>
+#import <VenmoAppSwitch/Venmo.h>
 
 @interface CourierConfirmViewController ()
 
 @end
 
-@implementation CourierConfirmViewController
+@implementation CourierConfirmViewController{
+    VenmoClient *_venmoClient;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -124,10 +127,50 @@
 
 - (void)handleConfirmation
 {
+    // Venmo
+    _venmoClient = [VenmoClient clientWithAppId:@"1422" secret:@"s5z3FenAVb7YYFPNbNKcHfeby6ACZMrV"];
+    
+    VenmoTransaction *venmoTransaction = [[VenmoTransaction alloc] init];
+    venmoTransaction.type = VenmoTransactionTypeCharge;
+    venmoTransaction.amount = [NSDecimalNumber decimalNumberWithString:self.order[@"price"]];
+    venmoTransaction.note = @"what does the fox say";
+    venmoTransaction.toUserHandle = self.order[@"customer"][@"phone"];
+    
+    VenmoViewController *venmoViewController = [_venmoClient viewControllerWithTransaction:
+                                                venmoTransaction];
+    if (venmoViewController) {
+        [self presentModalViewController:venmoViewController animated:YES];
+    }
+
     if ([self.delegate respondsToSelector:@selector(courierConfirmViewController:didCompleteOrder:)]) {
         [self.delegate courierConfirmViewController:self didCompleteOrder:self.order];
         [self dismissViewControllerAnimated:YES completion:nil];
     }
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    NSLog(@"openURL: %@", url);
+    return [_venmoClient openURL:url completionHandler:^(VenmoTransaction *transaction, NSError *error) {
+        if (transaction) {
+            NSString *success = (transaction.success ? @"Success" : @"Failure");
+            NSString *title = [@"Transaction " stringByAppendingString:success];
+            NSString *message = [@"payment_id: " stringByAppendingFormat:@"%@. %@ %@ %@ (%@) $%@ %@",
+                                 transaction.transactionID,
+                                 transaction.fromUserID,
+                                 transaction.typeStringPast,
+                                 transaction.toUserHandle,
+                                 transaction.toUserID,
+                                 transaction.amountString,
+                                 transaction.note];
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message
+                                                               delegate:nil cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+            [alertView show];
+        } else { // error
+            NSLog(@"transaction error code: %i", error.code);
+        }
+    }];
 }
 
 @end
