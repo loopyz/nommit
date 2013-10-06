@@ -111,7 +111,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [orderKeys count];  // why no self?
+    return [orderKeys count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -123,7 +123,6 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
-    
     
     NSString* orderKey = [orderKeys objectAtIndex:indexPath.row];
     NSMutableDictionary *order = orders[orderKey];
@@ -140,9 +139,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"We selected something!");
-    NSMutableDictionary *order = orders[[orderKeys objectAtIndex:indexPath.row]];
-    CourierConfirmViewController *ccvc = [[CourierConfirmViewController alloc] initWithOrder:order];
+    NSString* orderKey = [orderKeys objectAtIndex:indexPath.row];
+    NSMutableDictionary *order = orders[orderKey];
+    CourierConfirmViewController *ccvc = [[CourierConfirmViewController alloc] initWithOrder:order andKey:orderKey];
     UINavigationController *ccvcNavController = [[UINavigationController alloc] initWithRootViewController:ccvc];
     [self presentViewController:ccvcNavController animated:YES completion:nil];
 }
