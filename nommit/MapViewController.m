@@ -71,13 +71,13 @@
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
     
-    CGRect rect = CGRectMake(10,screenHeight-100,screenWidth-20,44);
+    CGRect rect = CGRectMake(10,screenHeight-50,screenWidth-20,44);
     UIColor *buttonColor = [[UIColor alloc] initWithRed:174.0/255 green:134.0/255 blue:191.0/255 alpha:1];
     GlossyButton *glossyBtn = [[GlossyButton alloc] initWithFrame:rect withBackgroundColor:buttonColor];
     [glossyBtn setTitle:@"Request Food" forState:UIControlStateNormal];
     [glossyBtn addTarget:self action:@selector(openRequestView) forControlEvents:UIControlEventTouchUpInside];
 
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, screenHeight - 155, screenWidth-20, 44)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, screenHeight - 100, screenWidth-20, 44)];
     [label setText:@"  Address"];
     [label setBackgroundColor:[UIColor whiteColor]];
     //[label setShadowColor:[UIColor blackColor]];

@@ -9,21 +9,26 @@
 #import "RequestViewController.h"
 #import <VenmoAppSwitch/Venmo.h>
 #import "MapViewController.h"
+#import "RequestView.h"
 
 @interface RequestViewController ()
 
+@property (nonatomic, strong) RequestView *reqView;
+
 @end
+
 
 @implementation RequestViewController {
     VenmoClient *_venmoClient;
     Firebase * _firebase;
 }
 
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        self.view = _reqView;
+        _reqView.delegate = self;
         
         self.navigationItem.title = @"Request Food";
         // ADD: Search bar
@@ -82,8 +87,8 @@
 
 - (void)makeRequest
 {
-    //Make the food request!
-    //Venmo
+    // Make the food request! MOVE TO CourierConfirmViewController (courier charges customer)
+    // Venmo
     _venmoClient = [VenmoClient clientWithAppId:@"1422" secret:@"s5z3FenAVb7YYFPNbNKcHfeby6ACZMrV"];
     
     VenmoTransaction *venmoTransaction = [[VenmoTransaction alloc] init];
@@ -98,9 +103,15 @@
         [self presentModalViewController:venmoViewController animated:YES];
     }
     
+    // TEST after UI implemented for choosing restaurants!
     Firebase* newOrderRef = [_firebase childByAutoId];
     [newOrderRef setValue:@{
-                            //@"customer" : @{@"name" : .text} // TODO!
+                            @"customer" : @{@"name" : _reqView.customer,
+                                            @"location": _reqView.customerLocation},
+                            @"restaurant" : @{@"name" : _reqView.restaurant,
+                                              @"location": _reqView.restaurantLocation},
+                            @"food" : _reqView.food,
+                            @"status" : @0
                             }];
 }
 
