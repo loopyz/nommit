@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface RequestView : UIView <UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UILabel *customer;
 @property (nonatomic, strong) UILabel *restaurant;
+@property (nonatomic, strong) CLLocation *customerLocation;
+@property (nonatomic, strong) CLLocation *restaurantLocation;
 @property (nonatomic, strong) UITextField *food;
 @property (nonatomic, strong) UITextField *restaurantSearchText;
 @property (nonatomic, strong) UIButton *searchButton;

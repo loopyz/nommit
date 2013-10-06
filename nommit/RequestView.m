@@ -21,6 +21,10 @@
         _searchButton = [[UIButton buttonWithType:UIButtonTypeCustom] initWithFrame:CGRectMake(width-40, 0, 20, 44)];
         [_searchButton setTitle:@"Search" forState:UIControlStateNormal];
         [_searchButton addTarget:self action:@selector(searchForRestaurant) forControlEvents:UIControlEventTouchUpInside];
+        
+        [self addSubview:_searchButton];
+        [self addSubview:_restaurantSearchText];
+        
     }
     return self;
 }

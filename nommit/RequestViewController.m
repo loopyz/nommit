@@ -24,6 +24,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        
         self.navigationItem.title = @"Request Food";
         // ADD: Search bar
         // TODO: Learn Yelp API
