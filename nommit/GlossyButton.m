@@ -18,6 +18,7 @@
         // Initialization code
         [self makeButtonShiny:self withBackgroundColor:backgroundColor];
         [[self titleLabel] setFont:[UIFont fontWithName:@"Helvetica-Bold" size:18]];
+        
     }
     return self;
 }
@@ -55,6 +56,50 @@
     [button.layer addSublayer:shineLayer];
     
     [button setBackgroundColor:backgroundColor];
+    
+//    if (self.state == UIControlStateHighlighted) {
+//        [button setBackgroundColor: [UIColor redColor]];
+//        [button setHighlighted: YES];
+//    }
+//    
+//    else {
+//        [button setBackgroundColor: [UIColor blueColor]];
+//    }
+
 }
+
+// Add the following methods to the bottom
+- (void)hesitateUpdate
+{
+    [self setNeedsDisplay];
+}
+
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [super touchesBegan:touches withEvent:event];
+    [self setNeedsDisplay];
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [super touchesMoved:touches withEvent:event];
+    [self setNeedsDisplay];
+    
+}
+
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [super touchesCancelled:touches withEvent:event];
+    [self setNeedsDisplay];
+    [self performSelector:@selector(hesitateUpdate) withObject:nil afterDelay:0.1];
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [super touchesEnded:touches withEvent:event];
+    [self setNeedsDisplay];
+    [self performSelector:@selector(hesitateUpdate) withObject:nil afterDelay:0.1];
+}
+
 
 @end

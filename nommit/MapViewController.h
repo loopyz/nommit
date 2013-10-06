@@ -21,6 +21,7 @@
 @property (nonatomic, assign) NSInteger mode;
 @property (nonatomic, strong) NSString *orderKey;
 @property (strong, nonatomic) IBOutlet UITextField *myTextField;
+@property (nonatomic, strong) UITextField *textField;
 
 - (id)initWithMode:(NSInteger) mode andOrderKey:(NSString *)orderKey;
 
