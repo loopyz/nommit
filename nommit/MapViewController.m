@@ -38,7 +38,8 @@
                                                                  zoom:6];
     mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     
-    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(42.358867, -71.093825);
+    
+    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(42.358328, -71.096507);
     GMSMarker *marker2 = [GMSMarker markerWithPosition:position];
     marker2.title = @"Courier Location";
     marker2.map = mapView_;
