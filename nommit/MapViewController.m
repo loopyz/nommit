@@ -32,6 +32,7 @@
     marker.title = @"Null Island";
     marker.snippet = @"Uninitialized";
     marker.map = mapView_;
+
 }
 
 - (id)init{
