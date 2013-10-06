@@ -9,6 +9,7 @@
 
 
 #import "CourierViewController.h"
+#import "CourierConfirmViewController.h"
 
 @interface CourierViewController ()
 
@@ -123,16 +124,27 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    NSString* orderKey = [orderKeys objectAtIndex:indexPath.row];
-    id order = orders[orderKey];
     
-    cell.textLabel.text = order[@"restaurant"];
+    NSString* orderKey = [orderKeys objectAtIndex:indexPath.row];
+    NSMutableDictionary *order = orders[orderKey];
+    
+    cell.textLabel.text = order[@"restaurant"][@"name"];
     [[cell textLabel] setLineBreakMode:NSLineBreakByWordWrapping];
     
     [[cell detailTextLabel] setText:order[@"food"]];
     [[cell detailTextLabel] setLineBreakMode:NSLineBreakByWordWrapping];
     
     return cell;
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"We selected something!");
+    NSMutableDictionary *order = orders[[orderKeys objectAtIndex:indexPath.row]];
+    CourierConfirmViewController *ccvc = [[CourierConfirmViewController alloc] initWithOrder:order];
+    UINavigationController *ccvcNavController = [[UINavigationController alloc] initWithRootViewController:ccvc];
+    [self presentViewController:ccvcNavController animated:YES completion:nil];
 }
 
 /*

@@ -25,13 +25,13 @@
 		F370A464180051C8003B7DA8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370A463180051C8003B7DA8 /* SystemConfiguration.framework */; };
 		F370A46618005204003B7DA8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370A46518005204003B7DA8 /* MobileCoreServices.framework */; };
 		F370A46A18005766003B7DA8 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370A46918005766003B7DA8 /* StoreKit.framework */; };
-		F3CA30BA1800E01400914EA1 /* CourierConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3CA30B71800E01400914EA1 /* CourierConfirmViewController.m */; };
 		F3CA30BB1800E01400914EA1 /* CourierViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3CA30B91800E01400914EA1 /* CourierViewController.m */; };
 		F3CA30BD1800E03E00914EA1 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3CA30BC1800E03E00914EA1 /* Firebase.framework */; };
 		F3CA30BF1800E07800914EA1 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F3CA30BE1800E07800914EA1 /* GoogleMaps.bundle */; };
 		F3CA30C11800E10500914EA1 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3CA30C01800E10500914EA1 /* GoogleMaps.framework */; };
 		F3CA32A91800EAC400914EA1 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3CA32A81800EAC400914EA1 /* AddressBook.framework */; };
 		F3CA32AB1800EAF600914EA1 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F3CA32AA1800EAF600914EA1 /* libicucore.dylib */; };
+		F3CA32AE1800F37000914EA1 /* CourierConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3CA32AD1800F37000914EA1 /* CourierConfirmViewController.m */; };
 		F3DF4A2217FA07DF000B51E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DF4A2117FA07DF000B51E4 /* UIKit.framework */; };
 		F3DF4A2417FA07DF000B51E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DF4A2317FA07DF000B51E4 /* Foundation.framework */; };
 		F3DF4A2617FA07DF000B51E4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3DF4A2517FA07DF000B51E4 /* CoreGraphics.framework */; };
@@ -83,8 +83,6 @@
 		F370A463180051C8003B7DA8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F370A46518005204003B7DA8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		F370A46918005766003B7DA8 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		F3CA30B61800E01400914EA1 /* CourierConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourierConfirmViewController.h; sourceTree = "<group>"; };
-		F3CA30B71800E01400914EA1 /* CourierConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourierConfirmViewController.m; sourceTree = "<group>"; };
 		F3CA30B81800E01400914EA1 /* CourierViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourierViewController.h; sourceTree = "<group>"; };
 		F3CA30B91800E01400914EA1 /* CourierViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourierViewController.m; sourceTree = "<group>"; };
 		F3CA30BC1800E03E00914EA1 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
@@ -92,6 +90,8 @@
 		F3CA30C01800E10500914EA1 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = "../../HackMIT/GoogleMaps-iOS-1.5.0/GoogleMaps.framework"; sourceTree = "<group>"; };
 		F3CA32A81800EAC400914EA1 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		F3CA32AA1800EAF600914EA1 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		F3CA32AC1800F37000914EA1 /* CourierConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourierConfirmViewController.h; sourceTree = "<group>"; };
+		F3CA32AD1800F37000914EA1 /* CourierConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourierConfirmViewController.m; sourceTree = "<group>"; };
 		F3DF4A1E17FA07DF000B51E4 /* nommit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nommit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3DF4A2117FA07DF000B51E4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F3DF4A2317FA07DF000B51E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -220,8 +220,6 @@
 		F3DF4A2717FA07DF000B51E4 /* nommit */ = {
 			isa = PBXGroup;
 			children = (
-				F3CA30B61800E01400914EA1 /* CourierConfirmViewController.h */,
-				F3CA30B71800E01400914EA1 /* CourierConfirmViewController.m */,
 				F3CA30B81800E01400914EA1 /* CourierViewController.h */,
 				F3CA30B91800E01400914EA1 /* CourierViewController.m */,
 				F3DF4A3017FA07DF000B51E4 /* AppDelegate.h */,
@@ -232,6 +230,8 @@
 				8DEF3F781800B0FA005E2BDE /* RequestView.m */,
 				F3DF4A5F17FA0A82000B51E4 /* RequestViewController.h */,
 				F3DF4A6017FA0A82000B51E4 /* RequestViewController.m */,
+				F3CA32AC1800F37000914EA1 /* CourierConfirmViewController.h */,
+				F3CA32AD1800F37000914EA1 /* CourierConfirmViewController.m */,
 				F3DF4A5C17FA0A62000B51E4 /* RatingViewController.h */,
 				F3DF4A5D17FA0A62000B51E4 /* RatingViewController.m */,
 				F3DF4A5917FA093F000B51E4 /* MapViewController.h */,
@@ -426,9 +426,9 @@
 				F3DF4A2E17FA07DF000B51E4 /* main.m in Sources */,
 				F3DF4A3217FA07DF000B51E4 /* AppDelegate.m in Sources */,
 				F3DF4A5B17FA093F000B51E4 /* MapViewController.m in Sources */,
-				F3CA30BA1800E01400914EA1 /* CourierConfirmViewController.m in Sources */,
 				F3DF4A5E17FA0A62000B51E4 /* RatingViewController.m in Sources */,
 				8DEF3F791800B0FA005E2BDE /* RequestView.m in Sources */,
+				F3CA32AE1800F37000914EA1 /* CourierConfirmViewController.m in Sources */,
 				F3DF4A6117FA0A82000B51E4 /* RequestViewController.m in Sources */,
 				8D1F949E180074A6005A86A5 /* GlossyButton.m in Sources */,
 				F3CA30BB1800E01400914EA1 /* CourierViewController.m in Sources */,
