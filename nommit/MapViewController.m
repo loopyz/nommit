@@ -10,6 +10,7 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "GlossyButton.h"
 
+
 @interface MapViewController ()
 
 @end
@@ -17,20 +18,24 @@
 @implementation MapViewController {
     GMSMapView *mapView_;
 }
+@synthesize gs;
 
 - (void)loadView {
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:42.3581
-                                                            longitude:71.0636
-                                                                 zoom:6];
-    mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     mapView_.myLocationEnabled = YES;
-    self.view = mapView_;
+    
+    CLLocation *myLocation = mapView_.myLocation;
     
     GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = CLLocationCoordinate2DMake(42.3581, 71.0636);
-    marker.title = @"Null Island";
-    marker.snippet = @"Uninitialized";
+    marker.position = CLLocationCoordinate2DMake(myLocation.coordinate.latitude, myLocation.coordinate.longitude);
+    marker.title = @"Current Location";
     marker.map = mapView_;
+    
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:myLocation.coordinate.latitude
+                                                            longitude:myLocation.coordinate.longitude
+                                                                 zoom:6];
+    mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+    
+    self.view = mapView_;
 
 }
 
@@ -67,6 +72,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    mapView_.settings.myLocationButton = YES;
+    mapView_.myLocationEnabled = YES;
     
     if (self.mode == 0) {
         [self initMode0Buttons];
@@ -120,15 +127,61 @@
     [glossyBtn setTitle:@"Request Food" forState:UIControlStateNormal];
     [glossyBtn addTarget:self action:@selector(openRequestView) forControlEvents:UIControlEventTouchUpInside];
 
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, screenHeight - 100, screenWidth-20, 44)];
-    [label setText:@"  Address"];
-    [label setBackgroundColor:[UIColor whiteColor]];
+    
+    
+    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(10, screenHeight - 100, screenWidth-20, 44)];
+    
+    // This sets the border style of the text field
+    textField.borderStyle = UITextBorderStyleRoundedRect;
+    textField.contentVerticalAlignment =
+    UIControlContentVerticalAlignmentCenter;
+    [textField setFont:[UIFont boldSystemFontOfSize:12]];
+    
+    //Placeholder text is displayed when no text is typed
+    textField.placeholder = @"Address";
+    
+    
+    //It set when the left prefixLabel to be displayed
+    textField.leftViewMode = UITextFieldViewModeAlways;
+    
+    // Adds the textField to the view.
+    [self.view setUserInteractionEnabled:YES];
+    [self.view addSubview:textField];
+    
+    // sets the delegate to the current class
+    textField.delegate = self;
+    
+    //[label setText:@"  Address"];
+    //[label setBackgroundColor:[UIColor whiteColor]];
     //[label setShadowColor:[UIColor blackColor]];
     
     //set selector or callback as openRequestView for UITouchUpInside
     [self.view addSubview:glossyBtn];
-    [self.view addSubview:label];
+    //[self.view addSubview:label];
+    
+    
 }
+
+// pragma mark is used for easy access of code in Xcode
+#pragma mark - TextField Delegates
+
+// This method is called once we click inside the textField
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    NSLog(@"Text field did begin editing");
+}
+
+// This method is called once we complete editing
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+    NSLog(@"Text field ended editing");
+}
+
+// This method enables or disables the processing of return key
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+
 
 - (void)initNewCourierButton
 {
