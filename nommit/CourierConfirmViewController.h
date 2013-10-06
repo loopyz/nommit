@@ -20,6 +20,6 @@
 @property (nonatomic, strong) UILabel *food;
 @property (nonatomic, strong) UILabel *price;
 
-- (id)initWithOrder:(NSDictionary *)order;
+- (id)initWithOrder:(NSDictionary *)order andKey:(NSString *)orderKey;
 
 @end

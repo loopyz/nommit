@@ -8,6 +8,7 @@
 
 #import "CourierConfirmViewController.h"
 #import "GlossyButton.h"
+#import <Firebase/Firebase.h>
 
 @interface CourierConfirmViewController ()
 
@@ -87,15 +88,16 @@
 - (void)courierDidConfirm
 {
     //Try to confirm the order (ensure order still exists and is still open)
-    Firebase *orderRef = [[Firebase alloc] initWithUrl:[@"https://nommit.firebaseio.com/orders/" stringByAppendingString:orderKey]];
+    Firebase *orderRef = [[Firebase alloc] initWithUrl:[@"https://nommit.firebaseio.com/orders/" stringByAppendingString:_orderKey]];
     [orderRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-
-        if (snapshot.value == [NSNull null] || snapshot.value[@"status"] == 1) {
+        [orderRef removeAllObservers];
+        
+        if (snapshot.value == [NSNull null] || [snapshot.value[@"status"] intValue] == 1) {
             NSLog(@"Order already filled or cancelled!");
-            self.courierDidCancel();
+            [self courierDidCancel];
         } else {
-            NSLog(@"Order confirmed!")
-            [orderRef setValue:@{@"status" : @1})]
+            NSLog(@"Order confirmed!");
+            [[orderRef childByAppendingPath:@"status"] setValue:@1];
             // Return to MapView
         }
     }];
