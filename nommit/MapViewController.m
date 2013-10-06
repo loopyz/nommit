@@ -159,6 +159,7 @@
     GlossyButton *glossyBtn = [[GlossyButton alloc] initWithFrame:rect withBackgroundColor:buttonColor];
     [glossyBtn setTitle:@"Complete Delivery" forState:UIControlStateNormal];
     [glossyBtn addTarget:self action:@selector(didCompleteDelivery) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:glossyBtn];
 }
 
 - (void)initMode0Buttons
