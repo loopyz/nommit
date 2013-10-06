@@ -7,6 +7,7 @@
 //
 
 #import "MenuViewController.h"
+#import <Firebase/Firebase.h>
 
 @interface MenuViewController ()
 
@@ -15,22 +16,25 @@
 @implementation MenuViewController
 {
     NSArray* _menu;
+    NSDictionary* _restaurant;
+    Firebase *_firebase;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+        _firebase = [[Firebase alloc] initWithUrl:@"https://nommit.firebaseio.com/"];
     }
     return self;
 }
 
--(id)initWithMenuItems:(NSArray*)menuItems
+-(id)initWithMenuItems:(NSArray*)menuItems andRestaurant:(NSDictionary*)restaurant
 {
     self = [super init];
     if (self){
         _menu = menuItems;
+        _restaurant = restaurant;
     }
     return self;
 }
@@ -58,14 +62,13 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
+    //TODO: Figure out sections
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    //TODO: Figure out sections
     return [_menu count];
 }
 
@@ -94,6 +97,18 @@
 {
     NSLog(@"We selected something from the menu!");
     NSDictionary* menu = [_menu objectAtIndex:indexPath.row];
+    
+    // TEST after UI implemented for choosing restaurants!
+    Firebase* newOrderRef = [_firebase childByAutoId];
+    /*[newOrderRef setValue:@{
+                            @"customer" : @{@"name" : _reqView.customer,
+                                            @"location": _reqView.customerLocation},
+                            @"restaurant" : @{@"name" : _restaurant[@"name"],
+                                              @"location": _restaurant[@"street_address"]},
+                            @"food" : menu[@"name"],
+                            @"price" : menu[@"price"],
+                            @"status" : @0
+     }];*/
     
     //CourierConfirmViewController *ccvc = [[CourierConfirmViewController alloc] initWithOrder:order];
     //UINavigationController *ccvcNavController = [[UINavigationController alloc] initWithRootViewController:ccvc];

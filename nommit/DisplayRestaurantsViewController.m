@@ -142,7 +142,7 @@
             
             // ADD: time estimating function
             
-            MenuViewController *menuView = [[MenuViewController alloc] initWithMenuItems:menuItems];
+            MenuViewController *menuView = [[MenuViewController alloc] initWithMenuItems:menuItems andRestaurant:restaurant];
             [self presentViewController:menuView animated:YES completion:nil];
         }
     }];
