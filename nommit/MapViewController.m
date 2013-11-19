@@ -39,7 +39,7 @@
     mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     
     
-    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(42.358328, -71.096507);
+    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(40.44169, -79.94628);
     GMSMarker *marker2 = [GMSMarker markerWithPosition:position];
     marker2.title = @"Courier Location";
     marker2.map = mapView_;
@@ -226,7 +226,7 @@
     [textField setFont:[UIFont boldSystemFontOfSize:12]];
     
     //Placeholder text is displayed when no text is typed
-    textField.placeholder = @"      MIT ....... 1 courier available";
+    textField.placeholder = @"      Carnegie Mellon ....... 1 courier available";
     
     
     //It set when the left prefixLabel to be displayed
@@ -292,9 +292,9 @@
     //                                                    image.size.width, image.size.height)];
     //[v addSubview:button];
     
-    NSString *urlAsString = [NSString stringWithFormat:@"http://api.locu.com/v1_0/venue/search/api_key=bf748001618d2abadd62f21440b39f26cd89c515&country=United+States&region=CA&name=Bollyhood&description=best&location=37.78,122.42"];
-    NSURL *url = [[NSURL alloc] initWithString:urlAsString];
-    NSLog(@"%@", urlAsString);
+    //NSString *urlAsString = [NSString stringWithFormat:@"http://api.locu.com/v1_0/venue/search/api_key=bf748001618d2abadd62f21440b39f26cd89c515&country=United+States&region=CA&name=Bollyhood&description=best&location=37.78,122.42"];
+    //NSURL *url = [[NSURL alloc] initWithString:urlAsString];
+    //NSLog(@"%@", urlAsString);
     
     /*[NSURLConnection sendAsynchronousRequest:[[NSURLRequest alloc] initWithURL:url] queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         
