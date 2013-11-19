@@ -33,9 +33,10 @@
     marker.title = @"Current Location";
     marker.map = mapView_;
     
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:myLocation.coordinate.latitude
-                                                            longitude:myLocation.coordinate.longitude
-                                                                 zoom:6];
+    
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:42.358328 //myLocation.coordinate.latitude
+                                                            longitude:-71.096507 //myLocation.coordinate.longitude
+                                                                 zoom:14];
     mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     
     
