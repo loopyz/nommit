@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gpx
+xmlns="http://www.topografix.com/GPX/1/1"
+xmlns:gpxx = "http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd
+http://www.garmin.com/xmlschemas/GpxExtensions/v3
+http://www8.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd"
+version="1.1"
+creator="gpx-poi.com">
+
+   <wpt lat="40.441690" lon="-79.946280">
+      <time>2013-11-19T02:56:18Z</time>
+      <name>CMU</name>
+      <extensions>
+         <gpxx:WaypointExtension>
+            <gpxx:Address>
+               <gpxx:StreetAddress>Porter Hall</gpxx:StreetAddress>
+               <gpxx:City>Pittsburgh</gpxx:City>
+               <gpxx:State>PA</gpxx:State>
+               <gpxx:Country>US</gpxx:Country>
+               <gpxx:PostalCode>15213</gpxx:PostalCode>
+            </gpxx:Address>
+         </gpxx:WaypointExtension>
+      </extensions>
+   </wpt>
+
+</gpx>

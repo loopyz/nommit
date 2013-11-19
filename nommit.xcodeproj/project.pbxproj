@@ -35,6 +35,7 @@
 		F370A464180051C8003B7DA8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370A463180051C8003B7DA8 /* SystemConfiguration.framework */; };
 		F370A46618005204003B7DA8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370A46518005204003B7DA8 /* MobileCoreServices.framework */; };
 		F370A46A18005766003B7DA8 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F370A46918005766003B7DA8 /* StoreKit.framework */; };
+		F395C3DF183B0AF3001DBF5B /* CMU.gpx in Resources */ = {isa = PBXBuildFile; fileRef = F395C3DE183B0AF3001DBF5B /* CMU.gpx */; };
 		F3CA30BB1800E01400914EA1 /* CourierViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3CA30B91800E01400914EA1 /* CourierViewController.m */; };
 		F3CA30BD1800E03E00914EA1 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3CA30BC1800E03E00914EA1 /* Firebase.framework */; };
 		F3CA30BF1800E07800914EA1 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F3CA30BE1800E07800914EA1 /* GoogleMaps.bundle */; };
@@ -118,6 +119,7 @@
 		F370A463180051C8003B7DA8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F370A46518005204003B7DA8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		F370A46918005766003B7DA8 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		F395C3DE183B0AF3001DBF5B /* CMU.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CMU.gpx; sourceTree = "<group>"; };
 		F3CA30B81800E01400914EA1 /* CourierViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourierViewController.h; sourceTree = "<group>"; };
 		F3CA30B91800E01400914EA1 /* CourierViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourierViewController.m; sourceTree = "<group>"; };
 		F3CA30BC1800E03E00914EA1 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 		F3DF4A1517FA07DF000B51E4 = {
 			isa = PBXGroup;
 			children = (
+				F395C3DE183B0AF3001DBF5B /* CMU.gpx */,
 				F3CA32CA1801782900914EA1 /* ttt.gpx */,
 				F3DF4A2717FA07DF000B51E4 /* nommit */,
 				F3DF4A4517FA07E0000B51E4 /* nommitTests */,
@@ -484,6 +487,7 @@
 				F3CA32BB18014A7700914EA1 /* icon@2x.png in Resources */,
 				F3CA32C61801604C00914EA1 /* courier.png in Resources */,
 				8D50985418016DBB00A7E4B7 /* button_pressed.png in Resources */,
+				F395C3DF183B0AF3001DBF5B /* CMU.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

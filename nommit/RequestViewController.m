@@ -82,7 +82,7 @@
         
         // NOTE: only gets restaurants with menus
         NSString *requestString = [NSString
-                                   stringWithFormat:@"http://api.locu.com/v1_0/venue/search/?api_key=bf748001618d2abadd62f21440b39f26cd89c515&category=restaurant&has_menu=true&description=best&location=%f%@%f",
+                                   stringWithFormat:@"http://api.locu.com/v1_0/venue/search/?api_key=bf748001618d2abadd62f21440b39f26cd89c515&category=restaurant&has_menu=true&radius=5000&location=%f%@%f",
                                    currentLocation.coordinate.latitude, @"%2C+", currentLocation.coordinate.longitude];
         
         NSURL *url = [[NSURL alloc] initWithString:requestString];
