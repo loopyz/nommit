@@ -116,7 +116,7 @@
     
     [newOrderRef setValue:@{
                             @"customer" : @{@"name" : @"Gregory Rose",
-                                            @"location": @"Porter Hall"},
+                                            @"location": @"Porter Hall, Carnegie Mellon University"},
                             @"restaurant" : @{@"name" : self.restaurantName.text,
                                               @"location": self.restaurantLocation.text},
                             @"food" : @{@"name" : self.food.text,
